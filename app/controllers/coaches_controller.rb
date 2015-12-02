@@ -14,8 +14,23 @@ class CoachesController < ApplicationController
     end
   end
 
+  def login
+  end
+
   def show
     @coach = Coach.find(params[:id])
+  end
+
+
+  def find
+    @coach = Coach.find_by(email: params[:email])
+    if @coach && @coach.authenticate(params[:password])
+      session[:id] = @coach.id
+      redirect_to coach_path(@coach)
+    else
+      flash[:error] = "Bad username or password."
+      redirect_to coach_login_path
+    end
   end
 
 

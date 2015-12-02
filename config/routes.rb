@@ -6,6 +6,12 @@ Rails.application.routes.draw do
   root 'welcome#index'
 
   resources :coaches
+  get 'coach/login' => 'coaches#login'
+  post 'coaches/find' => 'coaches#find'
+
+  resources :clients
+  get 'client/login' => 'clients#login'
+  post 'clients/find' => 'clients#find'
 
   get 'logout' => 'sessions#logout', as: :logout
 

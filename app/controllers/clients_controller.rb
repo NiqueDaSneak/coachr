@@ -1,7 +1,8 @@
-class ClientsController
+class ClientsController < ApplicationController
 
 
-
+  def login
+  end
 
   private
 

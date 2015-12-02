@@ -2,12 +2,23 @@
 <html>
 <head>
   <title>Coachr</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-
+<header>
+<% if coach_logged_in? %>
+<%= link_to("Home", coach_path) %>
+<%= link_to("Log Out", logout_path) %>
+<%= link_to("New Client", ) %>
+<% end %>
+<% if client_logged_in? %>
+<%= link_to("Home", client_path) %>
+<%= link_to("Log Out", logout_path) %>
+<% end %>
+</header>
 <%= yield %>
 
 </body>

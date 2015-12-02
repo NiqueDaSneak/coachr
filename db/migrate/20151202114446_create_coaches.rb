@@ -3,6 +3,7 @@ class CreateCoaches < ActiveRecord::Migration
     create_table :coaches do |t|
       t.string :full_name, null: false
       t.string :email, null: false
+      t.string :password_digest, null: false
       t.string :company_name
 
       t.timestamps null: false

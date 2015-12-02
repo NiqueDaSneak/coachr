@@ -3,6 +3,7 @@ class CreateClients < ActiveRecord::Migration
     create_table :clients do |t|
       t.string :full_name, null: false
       t.string :email, null: false
+      t.string :password_digest, null: false
       t.references :coach, null: false
 
       t.timestamps null: false

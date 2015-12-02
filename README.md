@@ -1,1 +1,1 @@
-# coachr
+# Coachr is an app to help those who help us.

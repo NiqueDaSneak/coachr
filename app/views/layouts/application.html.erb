@@ -2,12 +2,19 @@
 <html>
 <head>
   <title>Coachr</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-
+<header>
+<% if logged_in? %>
+<%= link_to("Log Out", logout_path) %>
+<% else %>
+<%= link_to(current_user.full_name, ) %>
+<% end %>
+</header>
 <%= yield %>
 
 </body>

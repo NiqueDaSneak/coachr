@@ -253,3 +253,16 @@ ORDER BY c.conname
   [1m[36mGoal Load (0.8ms)[0m  [1mSELECT "goals".* FROM "goals"[0m
   [1m[35mClient Load (3.4ms)[0m  SELECT  "clients".* FROM "clients"  ORDER BY "clients"."id" ASC LIMIT 1
   [1m[36mGoal Load (2.2ms)[0m  [1mSELECT "goals".* FROM "goals" WHERE "goals"."client_id" = $1[0m  [["client_id", 1]]
+
+
+Started GET "/" for ::1 at 2015-12-02 12:57:50 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (20.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb (3.2ms)
+Completed 200 OK in 144ms (Views: 94.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2015-12-02 13:07:39 -0500
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb (0.1ms)
+Completed 200 OK in 46ms (Views: 44.9ms | ActiveRecord: 0.0ms)

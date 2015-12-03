@@ -2,10 +2,10 @@ class ClientsController < ApplicationController
 
   def new
     @client = Client.new
+    $temp_pass = password_gen
   end
 
   def create
-    $temp_pass = password_gen
     @client = Client.create(client_params)
     binding.pry
     if @client.save
@@ -41,9 +41,11 @@ class ClientsController < ApplicationController
 
   def update
     @client = Client.find(params[:id])
-    if @client.update_attributes(client_params)
+    if params[:client][:password] == params[:client][:password_confirmation]
+      @client.update_attributes(client_params)
       redirect_to client_path
     else
+      flash[:error] = "The two passwords you entered don't match. Try Again."
       redirect_to edit_client_path
     end
   end

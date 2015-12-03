@@ -39,9 +39,18 @@ class ClientsController < ApplicationController
     @client = Client.find(params[:id])
   end
 
+  def update
+    @client = Client.find(params[:id])
+    if @client.update_attributes(client_params)
+      redirect_to client_path
+    else
+      redirect_to edit_client_path
+    end
+  end
+
   private
 
   def client_params
-    client_params = params.require(:client).permit(:full_name, :email, :password, :coach_id)
+    client_params = params.require(:client).permit(:full_name, :email, :password, :coach_id, :first_login)
   end
 end

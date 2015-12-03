@@ -5,6 +5,7 @@ class CreateClients < ActiveRecord::Migration
       t.string :email, null: false
       t.string :password_digest, null: false
       t.references :coach, null: false
+      t.boolean :first_login, :default => true
 
       t.timestamps null: false
     end

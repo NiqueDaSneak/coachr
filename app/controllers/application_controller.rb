@@ -4,11 +4,11 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   def current_coach
-    @current_coach ||= Coach.find_by(id: session[:id]) if session[:id]
+    @current_coach ||= Coach.find_by(id: session[:coach_id]) if session[:coach_id]
   end
 
   def current_client
-    @current_client ||= Client.find_by(id: session[:id]) if session[:id]
+    @current_client ||= Client.find_by(id: session[:client_id]) if session[:client_id]
   end
 
   def coach_logged_in?
@@ -19,5 +19,14 @@ class ApplicationController < ActionController::Base
     !!current_client
   end
 
-  helper_method :current_user, :logged_in?
+  def password_gen
+    @pass = []
+    sample_set = %w{1 2 3 4 5 6 7 8 9 0 Q W E R T Y U I O P}
+    5.times do
+      @pass << sample_set.sample
+    end
+    return @pass.join("")
+  end
+
+  helper_method :current_coach, :current_client, :coach_logged_in?, :client_logged_in?, :password_gen
 end

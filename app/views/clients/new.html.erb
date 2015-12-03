@@ -1,0 +1,10 @@
+<p>Enter your clients email and give them access to their profile:</p>
+<p> <%= flash[:error] %></p>
+
+<%= form_for @client do |f| %>
+  <%= f.text_field :full_name, :placeholder => "Client's Full Name", :required => true %>
+  <%= f.text_field :email, :placeholder => "Client's Email:", :required => true %>
+  <%= f.hidden_field :coach_id, :value => current_coach.id %>
+  <%= f.hidden_field :password, :value => $temp_pass  %>
+  <%= f.submit %>
+  <% end %>

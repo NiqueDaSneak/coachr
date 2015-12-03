@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Welcome to Coachr, <%= @client.full_name %>!</h1>
+    <p>Your coach has successfully added you, and probably has some goals ready for you to look at.We have set a temporary password up for you: <%= $temp_pass %>. Copy and paste it into the log in form, which you can find <%= link_to("here", @url) %>. We will ask you to change it as well as verify the rest of your information before you can see your profile.
+    </p>
+
+       <p>We're excited for you to take this first step toward achieving your goals!</p>
+
+       <p>The Coachr Team</p>
+  </body>
+</html>

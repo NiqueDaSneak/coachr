@@ -7,7 +7,7 @@ class CoachesController < ApplicationController
   def create
     @coach = Coach.new(coach_params)
     if @coach.save
-      session[:id] = @coach.id
+      session[:coach_id] = @coach.id
       redirect_to coach_path(@coach)
     else
       redirect_to new_coach_path, :flash => {:error => "Make sure all required fields are filled in."}
@@ -25,7 +25,7 @@ class CoachesController < ApplicationController
   def find
     @coach = Coach.find_by(email: params[:email])
     if @coach && @coach.authenticate(params[:password])
-      session[:id] = @coach.id
+      session[:coach_id] = @coach.id
       redirect_to coach_path(@coach)
     else
       flash[:error] = "Bad username or password."

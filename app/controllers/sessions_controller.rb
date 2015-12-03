@@ -1,7 +1,7 @@
 class SessionsController < ApplicationController
 
   def logout
-    session[:id] = nil
+    session.clear
     redirect_to root_path
   end
 

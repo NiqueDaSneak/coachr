@@ -10,10 +10,12 @@
 <body>
 <header>
 <% if coach_logged_in? %>
-<%= link_to("Home", coach_path) %>
+
+<%= link_to("Home", coach_path(current_coach)) %>
 <%= link_to("Log Out", logout_path) %>
-<%= link_to("New Client", ) %>
+<%= link_to("Create New Client", new_client_path) %>
 <% end %>
+
 <% if client_logged_in? %>
 <%= link_to("Home", client_path) %>
 <%= link_to("Log Out", logout_path) %>

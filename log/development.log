@@ -4252,3 +4252,227 @@ Processing by ClientsController#show as HTML
   Rendered clients/show.html.erb within layouts/application (1.0ms)
   [1m[35mCoach Load (0.3ms)[0m  SELECT  "coaches".* FROM "coaches" WHERE "coaches"."id" = $1 LIMIT 1  [["id", 5]]
 Completed 200 OK in 66ms (Views: 64.4ms | ActiveRecord: 0.3ms)
+  [1m[36mClient Load (1.4ms)[0m  [1mSELECT  "clients".* FROM "clients"  ORDER BY "clients"."id" DESC LIMIT 1[0m
+  [1m[35mClient Load (1.3ms)[0m  SELECT  "clients".* FROM "clients"  ORDER BY "clients"."id" DESC LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  DELETE FROM "clients" WHERE "clients"."id" = $1  [["id", 6]]
+  [1m[36m (19.2ms)[0m  [1mCOMMIT[0m
+  [1m[35mClient Load (2.5ms)[0m  SELECT  "clients".* FROM "clients"  ORDER BY "clients"."id" DESC LIMIT 1
+  [1m[36mClient Load (1.1ms)[0m  [1mSELECT  "clients".* FROM "clients"  ORDER BY "clients"."id" DESC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.6ms)[0m  [1mDELETE FROM "clients" WHERE "clients"."id" = $1[0m  [["id", 7]]
+  [1m[35m (0.7ms)[0m  COMMIT
+
+
+Started GET "/clients/new" for ::1 at 2015-12-03 14:44:20 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ClientsController#new as HTML
+  [1m[35mCoach Load (29.4ms)[0m  SELECT  "coaches".* FROM "coaches" WHERE "coaches"."id" = $1 LIMIT 1  [["id", 5]]
+  Rendered clients/new.html.erb within layouts/application (438.7ms)
+Completed 200 OK in 1261ms (Views: 1012.4ms | ActiveRecord: 35.6ms)
+
+
+Started GET "/assets/layout.self-99312e2fbe97fd8a6474fc257711ec2fb0399f4a7b9ce9a76d84c6fc893b2d4e.css?body=1" for ::1 at 2015-12-03 14:44:23 -0500
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-12-03 14:44:23 -0500
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-12-03 14:44:23 -0500
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-12-03 14:44:23 -0500
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-12-03 14:44:23 -0500
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-12-03 14:44:24 -0500
+
+
+Started POST "/clients" for ::1 at 2015-12-03 14:44:35 -0500
+Processing by ClientsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"PVOHFYhOQsSTT3EZDW8sPLKIVGuJ5hr3/ylvS3wNzQZEepFVvkwicYlyfsefqPB42LWEPvWoy3EU7fiEbr7Chw==", "client"=>{"full_name"=>"Dom Clemmer", "email"=>"dom.fow@gmail.com", "coach_id"=>"5", "password"=>"[FILTERED]"}, "commit"=>"Create Client"}
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mClient Exists (26.1ms)[0m  SELECT  1 AS one FROM "clients" WHERE "clients"."full_name" = 'Dom Clemmer' LIMIT 1
+  [1m[36mClient Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "clients" WHERE "clients"."email" = 'dom.fow@gmail.com' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mClient Exists (0.3ms)[0m  SELECT  1 AS one FROM "clients" WHERE "clients"."full_name" = 'Dom Clemmer' LIMIT 1
+  [1m[36mClient Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "clients" WHERE "clients"."email" = 'dom.fow@gmail.com' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+Redirected to http://localhost:3000/clients/new
+Completed 302 Found in 103ms (ActiveRecord: 27.8ms)
+
+
+Started GET "/clients/new" for ::1 at 2015-12-03 14:44:35 -0500
+Processing by ClientsController#new as HTML
+  [1m[36mCoach Load (0.4ms)[0m  [1mSELECT  "coaches".* FROM "coaches" WHERE "coaches"."id" = $1 LIMIT 1[0m  [["id", 5]]
+  Rendered clients/new.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 44ms (Views: 43.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/coaches/5" for ::1 at 2015-12-03 14:45:53 -0500
+Processing by CoachesController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mCoach Load (0.3ms)[0m  SELECT  "coaches".* FROM "coaches" WHERE "coaches"."id" = $1 LIMIT 1  [["id", 5]]
+  Rendered coaches/show.html.erb within layouts/application (1.6ms)
+  [1m[36mCoach Load (0.4ms)[0m  [1mSELECT  "coaches".* FROM "coaches" WHERE "coaches"."id" = $1 LIMIT 1[0m  [["id", 5]]
+Completed 200 OK in 203ms (Views: 160.2ms | ActiveRecord: 4.2ms)
+
+
+Started GET "/clients/new" for ::1 at 2015-12-03 14:45:55 -0500
+Processing by ClientsController#new as HTML
+  [1m[35mCoach Load (0.4ms)[0m  SELECT  "coaches".* FROM "coaches" WHERE "coaches"."id" = $1 LIMIT 1  [["id", 5]]
+  Rendered clients/new.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 138ms (Views: 97.5ms | ActiveRecord: 2.1ms)
+
+
+Started POST "/clients" for ::1 at 2015-12-03 14:46:03 -0500
+Processing by ClientsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"AQ1OCB4rzHDJLrMhZsTX6a4w9fbMoNArFsyT22xIJxZ4JFhIKCmsxdMTvP/0AwutxA0lo7DuAa39CAQUfvsolw==", "client"=>{"full_name"=>"Dom Clemmer", "email"=>"dom.fow@gmail.com", "coach_id"=>"5", "password"=>"[FILTERED]"}, "commit"=>"Create Client"}
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mClient Exists (0.4ms)[0m  SELECT  1 AS one FROM "clients" WHERE "clients"."full_name" = 'Dom Clemmer' LIMIT 1
+  [1m[36mClient Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "clients" WHERE "clients"."email" = 'dom.fow@gmail.com' LIMIT 1[0m
+  [1m[35mSQL (12.4ms)[0m  INSERT INTO "clients" ("full_name", "email", "password_digest", "coach_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["full_name", "Dom Clemmer"], ["email", "dom.fow@gmail.com"], ["password_digest", "$2a$10$.AfwTSYPO9EnPUeNV/XWQezuf8yQs27otRaOguPT228WHoqpE6fnq"], ["coach_id", 5], ["created_at", "2015-12-03 19:46:04.022983"], ["updated_at", "2015-12-03 19:46:04.022983"]]
+  [1m[36m (18.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mClient Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "clients" WHERE ("clients"."full_name" = 'Dom Clemmer' AND "clients"."id" != 8) LIMIT 1[0m
+  [1m[35mClient Exists (0.3ms)[0m  SELECT  1 AS one FROM "clients" WHERE ("clients"."email" = 'dom.fow@gmail.com' AND "clients"."id" != 8) LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35mCoach Load (0.4ms)[0m  SELECT  "coaches".* FROM "coaches" WHERE "coaches"."id" = $1 LIMIT 1  [["id", 5]]
+  Rendered client_mailer/welcome_email.html.erb within layouts/mailer (1.0ms)
+
+ClientMailer#welcome_email: processed outbound mail in 503.4ms
+
+Sent mail to dom.fow@gmail.com (909.8ms)
+Date: Thu, 03 Dec 2015 14:46:12 -0500
+From: niquedasneak4@gmail.com
+To: dom.fow@gmail.com
+Message-ID: <56609c04263e7_90b23fe2177d978456073@doms-macbook.mail>
+Subject: Nic Added You On Coachr
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<html>
+  <body>
+    <!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Welcome to Coachr, Dom Clemmer!</h1>
+    <p>Your coach has successfully added you, and probably has some goals ready for you to look at.We have set a temporary password up for you: E50EI. Copy and paste it into the log in form, which you can find <a href="http://localhost:3000/client/login">here</a>. We will ask you to change it as well as verify the rest of your information before you can see your profile.
+    </p>
+
+       <p>We're excited for you to take this first step toward achieving your goals!</p>
+
+       <p>The Coachr Team</p>
+  </body>
+</html>
+  </body>
+</html>
+
+Completed 500 Internal Server Error in 9125ms (ActiveRecord: 33.2ms)
+
+Net::SMTPAuthenticationError (534-5.7.14 <https://accounts.google.com/ContinueSignIn?sarp=1&scc=1&plt=AKgnsbuSz
+):
+  app/controllers/clients_controller.rb:12:in `create'
+
+
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (9.7ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.4ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (114.1ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (120.8ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (315.5ms)
+  [1m[36mClient Load (94.1ms)[0m  [1mSELECT  "clients".* FROM "clients"  ORDER BY "clients"."id" DESC LIMIT 1[0m
+  [1m[35mClient Load (14.7ms)[0m  SELECT  "clients".* FROM "clients"  ORDER BY "clients"."id" DESC LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (15.3ms)[0m  DELETE FROM "clients" WHERE "clients"."id" = $1  [["id", 8]]
+  [1m[36m (19.4ms)[0m  [1mCOMMIT[0m
+
+
+Started GET "/coaches/5" for ::1 at 2015-12-03 14:51:01 -0500
+Processing by CoachesController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mCoach Load (1.8ms)[0m  [1mSELECT  "coaches".* FROM "coaches" WHERE "coaches"."id" = $1 LIMIT 1[0m  [["id", 5]]
+  Rendered coaches/show.html.erb within layouts/application (1.9ms)
+  [1m[35mCoach Load (0.8ms)[0m  SELECT  "coaches".* FROM "coaches" WHERE "coaches"."id" = $1 LIMIT 1  [["id", 5]]
+Completed 200 OK in 438ms (Views: 399.1ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/clients/new" for ::1 at 2015-12-03 14:51:03 -0500
+Processing by ClientsController#new as HTML
+  [1m[36mCoach Load (0.3ms)[0m  [1mSELECT  "coaches".* FROM "coaches" WHERE "coaches"."id" = $1 LIMIT 1[0m  [["id", 5]]
+  Rendered clients/new.html.erb within layouts/application (9.2ms)
+Completed 200 OK in 90ms (Views: 86.5ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/clients" for ::1 at 2015-12-03 14:51:35 -0500
+Processing by ClientsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xIOqDifz0wcHRMOQ06LxndkNacJDFgxzGNzTtWwokc+9qrxOEfGzsh15zE5BZS3ZszC5lz9Y3fXzGER6fpueTg==", "client"=>{"full_name"=>"Dom Clemmer", "email"=>"dom.fow@gmail.com", "coach_id"=>"5", "password"=>"[FILTERED]"}, "commit"=>"Create Client"}
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mClient Exists (1.6ms)[0m  [1mSELECT  1 AS one FROM "clients" WHERE "clients"."full_name" = 'Dom Clemmer' LIMIT 1[0m
+  [1m[35mClient Exists (1.2ms)[0m  SELECT  1 AS one FROM "clients" WHERE "clients"."email" = 'dom.fow@gmail.com' LIMIT 1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "clients" ("full_name", "email", "password_digest", "coach_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["full_name", "Dom Clemmer"], ["email", "dom.fow@gmail.com"], ["password_digest", "$2a$10$GOiHx9YEcevIC64Z8fG1AejDSckVuvK8A3egUqH3G8NJkINtF8PlG"], ["coach_id", 5], ["created_at", "2015-12-03 19:51:35.193013"], ["updated_at", "2015-12-03 19:51:35.193013"]]
+  [1m[35m (151.5ms)[0m  COMMIT
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mClient Exists (20.7ms)[0m  SELECT  1 AS one FROM "clients" WHERE ("clients"."full_name" = 'Dom Clemmer' AND "clients"."id" != 9) LIMIT 1
+  [1m[36mClient Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "clients" WHERE ("clients"."email" = 'dom.fow@gmail.com' AND "clients"."id" != 9) LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36mCoach Load (1.5ms)[0m  [1mSELECT  "coaches".* FROM "coaches" WHERE "coaches"."id" = $1 LIMIT 1[0m  [["id", 5]]
+  Rendered client_mailer/welcome_email.html.erb within layouts/mailer (0.3ms)
+
+ClientMailer#welcome_email: processed outbound mail in 263.7ms
+
+Sent mail to dom.fow@gmail.com (1964.5ms)
+Date: Thu, 03 Dec 2015 14:51:54 -0500
+From: niquedasneak4@gmail.com
+To: dom.fow@gmail.com
+Message-ID: <56609d5a74111_90b23fe2195add005614e@doms-macbook.mail>
+Subject: Nic Added You On Coachr
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<html>
+  <body>
+    <!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Welcome to Coachr, Dom Clemmer!</h1>
+    <p>Your coach has successfully added you, and probably has some goals ready for you to look at.We have set a temporary password up for you: I4QT3. Copy and paste it into the log in form, which you can find <a href="http://localhost:3000/client/login">here</a>. We will ask you to change it as well as verify the rest of your information before you can see your profile.
+    </p>
+
+       <p>We're excited for you to take this first step toward achieving your goals!</p>
+
+       <p>The Coachr Team</p>
+  </body>
+</html>
+  </body>
+</html>
+
+Redirected to http://localhost:3000/clients/9
+Completed 302 Found in 21397ms (ActiveRecord: 178.0ms)
+
+
+Started GET "/clients/9" for ::1 at 2015-12-03 14:51:56 -0500
+Processing by ClientsController#show as HTML
+  Parameters: {"id"=>"9"}
+  Rendered clients/show.html.erb within layouts/application (1.3ms)
+  [1m[35mCoach Load (0.3ms)[0m  SELECT  "coaches".* FROM "coaches" WHERE "coaches"."id" = $1 LIMIT 1  [["id", 5]]
+Completed 200 OK in 438ms (Views: 436.7ms | ActiveRecord: 0.3ms)

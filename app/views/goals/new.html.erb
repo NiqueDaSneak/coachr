@@ -1,0 +1,9 @@
+<p>Fill out the form to create a new goal:</p>
+
+<%= form_for @goal do |f| %>
+<%= f.text_field :statement, :placeholder => "What is the goal?" %>
+<%= f.text_area :notes, :placeholder => "Section for notes:" %>
+<%= f.hidden_field :client_id, :value => @client_id %>
+<%= f.hidden_field :completed, :value => false %>
+<%= f.submit%>
+  <% end %>

@@ -5378,3 +5378,1076 @@ Processing by ClientsController#show as HTML
   Rendered clients/show.html.erb within layouts/application (0.0ms)
   [1m[35mClient Load (0.3ms)[0m  SELECT  "clients".* FROM "clients" WHERE "clients"."id" = $1 LIMIT 1  [["id", 4]]
 Completed 200 OK in 48ms (Views: 47.1ms | ActiveRecord: 0.3ms)
+  [1m[36m (1253.6ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL) [0m
+  [1m[35m (99.8ms)[0m  CREATE UNIQUE INDEX  "unique_schema_migrations" ON "schema_migrations"  ("version")
+  [1m[36mActiveRecord::SchemaMigration Load (122.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateCoaches (20151202114446)
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (656.1ms)[0m  [1mCREATE TABLE "coaches" ("id" serial primary key, "full_name" character varying NOT NULL, "email" character varying NOT NULL, "password_digest" character varying NOT NULL, "company_name" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35mSQL (104.5ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20151202114446"]]
+  [1m[36m (11.3ms)[0m  [1mCOMMIT[0m
+Migrating to CreateClients (20151202114521)
+  [1m[35m (15.3ms)[0m  BEGIN
+  [1m[36m (40.9ms)[0m  [1mCREATE TABLE "clients" ("id" serial primary key, "full_name" character varying NOT NULL, "email" character varying NOT NULL, "password_digest" character varying NOT NULL, "coach_id" integer NOT NULL, "first_login" boolean DEFAULT 't', "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35mSQL (31.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20151202114521"]]
+  [1m[36m (2.7ms)[0m  [1mCOMMIT[0m
+Migrating to CreateGoals (20151202114526)
+  [1m[35m (1.5ms)[0m  BEGIN
+  [1m[36m (5.0ms)[0m  [1mCREATE TABLE "goals" ("id" serial primary key, "statement" character varying NOT NULL, "notes" character varying, "client_id" integer NOT NULL, "completed" boolean DEFAULT 'f', "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20151202114526"]]
+  [1m[36m (1.3ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.3ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (28.8ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'clients'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (2.9ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'coaches'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (2.5ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'goals'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mCoach Exists (68.8ms)[0m  [1mSELECT  1 AS one FROM "coaches" WHERE "coaches"."full_name" = 'Ramon Berrios' LIMIT 1[0m
+  [1m[35mCoach Exists (0.4ms)[0m  SELECT  1 AS one FROM "coaches" WHERE "coaches"."email" = 'ramon@dbc.com' LIMIT 1
+  [1m[36mSQL (33.6ms)[0m  [1mINSERT INTO "coaches" ("full_name", "email", "password_digest", "company_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["full_name", "Ramon Berrios"], ["email", "ramon@dbc.com"], ["password_digest", "$2a$10$V7XZB1RvDwBjpZ8vm90Dk.gXJCarWLqj4ZquHyR8jRZ76huUbVC52"], ["company_name", "Dev Bootcamp"], ["created_at", "2015-12-03 23:53:34.226345"], ["updated_at", "2015-12-03 23:53:34.226345"]]
+  [1m[35m (0.8ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mClient Exists (35.7ms)[0m  SELECT  1 AS one FROM "clients" WHERE "clients"."full_name" = 'Billy Fowler' LIMIT 1
+  [1m[36mClient Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "clients" WHERE "clients"."email" = 'billy@gmail.com' LIMIT 1[0m
+  [1m[35mSQL (31.2ms)[0m  INSERT INTO "clients" ("full_name", "email", "password_digest", "coach_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["full_name", "Billy Fowler"], ["email", "billy@gmail.com"], ["password_digest", "$2a$10$4Q9zGkmyO8rd2hzpzr2VOe1Ff5wVKLZzCSBAU//.pLvhKumqNPLRG"], ["coach_id", 1], ["created_at", "2015-12-03 23:53:34.464595"], ["updated_at", "2015-12-03 23:53:34.464595"]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (30.4ms)[0m  [1mINSERT INTO "goals" ("statement", "notes", "client_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["statement", "Send out resume to Google"], ["notes", "This job is for a engineering position so make sure your cover letter reflects that"], ["client_id", 1], ["created_at", "2015-12-03 23:53:34.534644"], ["updated_at", "2015-12-03 23:53:34.534644"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "goals" ("statement", "client_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["statement", "Add latest app to portfolio"], ["client_id", 1], ["created_at", "2015-12-03 23:53:34.568548"], ["updated_at", "2015-12-03 23:53:34.568548"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "goals" ("statement", "notes", "client_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["statement", "Update LinkedIn"], ["notes", "Add profile picture from DBC"], ["client_id", 1], ["created_at", "2015-12-03 23:53:34.572015"], ["updated_at", "2015-12-03 23:53:34.572015"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "goals" ("statement", "client_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["statement", "Change Twitter Name"], ["client_id", 1], ["created_at", "2015-12-03 23:53:34.575103"], ["updated_at", "2015-12-03 23:53:34.575103"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mClient Exists (15.5ms)[0m  [1mSELECT  1 AS one FROM "clients" WHERE "clients"."full_name" = 'Nichole Clemmer' LIMIT 1[0m
+  [1m[35mClient Exists (0.4ms)[0m  SELECT  1 AS one FROM "clients" WHERE "clients"."email" = 'nichole@gmail.com' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "clients" ("full_name", "email", "password_digest", "coach_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["full_name", "Nichole Clemmer"], ["email", "nichole@gmail.com"], ["password_digest", "$2a$10$Pa5wLkXff/rpnrYpM76dOeEs19PBl5zm9F6tFBb2zYX.NG/GTx7Zy"], ["coach_id", 1], ["created_at", "2015-12-03 23:53:34.687019"], ["updated_at", "2015-12-03 23:53:34.687019"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "goals" ("statement", "notes", "client_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["statement", "Send follow up email to latest interviewer"], ["notes", "Interviewer's name was John Doe"], ["client_id", 2], ["created_at", "2015-12-03 23:53:34.690607"], ["updated_at", "2015-12-03 23:53:34.690607"]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+
+
+Started GET "/" for ::1 at 2015-12-03 18:56:37 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (3.5ms)
+  [1m[35mCoach Load (0.7ms)[0m  SELECT  "coaches".* FROM "coaches" WHERE "coaches"."id" = $1 LIMIT 1  [["id", 2]]
+Completed 200 OK in 1263ms (Views: 1128.8ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/coach/login" for ::1 at 2015-12-03 18:56:59 -0500
+Processing by CoachesController#login as HTML
+  Rendered coaches/login.html.erb within layouts/application (8.3ms)
+  [1m[36mCoach Load (1.2ms)[0m  [1mSELECT  "coaches".* FROM "coaches" WHERE "coaches"."id" = $1 LIMIT 1[0m  [["id", 2]]
+Completed 200 OK in 1187ms (Views: 1182.7ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/coaches/find" for ::1 at 2015-12-03 18:57:13 -0500
+Processing by CoachesController#find as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"yk7uzYaIPtnJt1rATjIKwK/Uqezfv4+7ix/elzmAxMOzZ/iNsIpebNOKVR7c9daExel5uaPxXj1g20lYKzPLQg==", "email"=>"ramon@dbc.com", "password"=>"[FILTERED]", "commit"=>"Save changes"}
+  [1m[35mCoach Load (41.2ms)[0m  SELECT  "coaches".* FROM "coaches" WHERE "coaches"."email" = $1 LIMIT 1  [["email", "ramon@dbc.com"]]
+Redirected to http://localhost:3000/coaches/1
+Completed 302 Found in 223ms (ActiveRecord: 49.0ms)
+
+
+Started GET "/coaches/1" for ::1 at 2015-12-03 18:57:14 -0500
+Processing by CoachesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCoach Load (0.5ms)[0m  [1mSELECT  "coaches".* FROM "coaches" WHERE "coaches"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mClient Load (1.1ms)[0m  SELECT "clients".* FROM "clients" WHERE "clients"."coach_id" = $1  [["coach_id", 1]]
+  Rendered coaches/show.html.erb within layouts/application (480.2ms)
+  [1m[36mCoach Load (0.4ms)[0m  [1mSELECT  "coaches".* FROM "coaches" WHERE "coaches"."id" = $1 LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 694ms (Views: 686.6ms | ActiveRecord: 5.3ms)
+
+
+Started GET "/clients/1" for ::1 at 2015-12-03 18:57:26 -0500
+Processing by ClientsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mClient Load (0.3ms)[0m  SELECT  "clients".* FROM "clients" WHERE "clients"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mGoal Load (0.5ms)[0m  [1mSELECT "goals".* FROM "goals" WHERE "goals"."client_id" = $1[0m  [["client_id", 1]]
+  Rendered clients/show.html.erb within layouts/application (48.4ms)
+  [1m[35mCoach Load (0.4ms)[0m  SELECT  "coaches".* FROM "coaches" WHERE "coaches"."id" = $1 LIMIT 1  [["id", 1]]
+Completed 200 OK in 256ms (Views: 250.5ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/clients/1" for ::1 at 2015-12-03 18:59:45 -0500
+Processing by ClientsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mClient Load (0.4ms)[0m  [1mSELECT  "clients".* FROM "clients" WHERE "clients"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mGoal Load (1.8ms)[0m  SELECT "goals".* FROM "goals" WHERE "goals"."client_id" = $1  [["client_id", 1]]
+  Rendered clients/show.html.erb within layouts/application (25.2ms)
+  [1m[36mCoach Load (0.4ms)[0m  [1mSELECT  "coaches".* FROM "coaches" WHERE "coaches"."id" = $1 LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 361ms (Views: 355.5ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/assets/layout.self-60270fdc5cb5a60e24a0eca8b617c4b151becfe376e80df16fedb1c4562edea1.css?body=1" for ::1 at 2015-12-03 18:59:48 -0500
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-12-03 18:59:48 -0500
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-12-03 18:59:48 -0500
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-12-03 18:59:48 -0500
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-12-03 18:59:48 -0500
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-12-03 18:59:48 -0500
+
+
+Started GET "/rails/info/routes" for ::1 at 2015-12-03 19:00:49 -0500
+Processing by Rails::InfoController#routes as HTML
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/routes/_route.html.erb (4.3ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/routes/_table.html.erb (110.7ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/railties-4.2.5/lib/rails/templates/rails/info/routes.html.erb within layouts/application (355.6ms)
+Completed 200 OK in 440ms (Views: 437.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/rails/info/routes" for ::1 at 2015-12-03 19:00:52 -0500
+Processing by Rails::InfoController#routes as HTML
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/routes/_route.html.erb (4.8ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/routes/_table.html.erb (0.8ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/railties-4.2.5/lib/rails/templates/rails/info/routes.html.erb within layouts/application (17.9ms)
+Completed 200 OK in 29ms (Views: 27.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/clients/1" for ::1 at 2015-12-03 19:03:08 -0500
+Processing by ClientsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mClient Load (0.5ms)[0m  SELECT  "clients".* FROM "clients" WHERE "clients"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mGoal Load (0.5ms)[0m  [1mSELECT "goals".* FROM "goals" WHERE "goals"."client_id" = $1[0m  [["client_id", 1]]
+  Rendered clients/show.html.erb within layouts/application (159.6ms)
+  [1m[35mCoach Load (0.3ms)[0m  SELECT  "coaches".* FROM "coaches" WHERE "coaches"."id" = $1 LIMIT 1  [["id", 1]]
+Completed 200 OK in 1170ms (Views: 1036.2ms | ActiveRecord: 15.9ms)
+
+
+Started GET "/assets/layout.self-60270fdc5cb5a60e24a0eca8b617c4b151becfe376e80df16fedb1c4562edea1.css?body=1" for ::1 at 2015-12-03 19:03:12 -0500
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-12-03 19:03:12 -0500
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-12-03 19:03:12 -0500
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-12-03 19:03:12 -0500
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-12-03 19:03:12 -0500
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-12-03 19:03:12 -0500
+
+
+Started GET "/goals/new.1" for ::1 at 2015-12-03 20:23:31 -0500
+
+NoMethodError (undefined method `action' for GoalsController:Class):
+  actionpack (4.2.5) lib/action_dispatch/routing/route_set.rb:76:in `dispatch'
+  actionpack (4.2.5) lib/action_dispatch/routing/route_set.rb:45:in `serve'
+  actionpack (4.2.5) lib/action_dispatch/journey/router.rb:43:in `block in serve'
+  actionpack (4.2.5) lib/action_dispatch/journey/router.rb:30:in `each'
+  actionpack (4.2.5) lib/action_dispatch/journey/router.rb:30:in `serve'
+  actionpack (4.2.5) lib/action_dispatch/routing/route_set.rb:817:in `call'
+  rack (1.6.4) lib/rack/etag.rb:24:in `call'
+  rack (1.6.4) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.6.4) lib/rack/head.rb:13:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/flash.rb:260:in `call'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.2.5) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.2.5) lib/active_record/connection_adapters/abstract/connection_pool.rb:653:in `call'
+  activerecord (4.2.5) lib/active_record/migration.rb:377:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.5) lib/active_support/callbacks.rb:88:in `__run_callbacks__'
+  activesupport (4.2.5) lib/active_support/callbacks.rb:778:in `_run_call_callbacks'
+  activesupport (4.2.5) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.5) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.5) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.5) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.5) lib/rails/engine.rb:518:in `call'
+  railties (4.2.5) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /usr/local/Cellar/ruby/2.2.2/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /usr/local/Cellar/ruby/2.2.2/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /usr/local/Cellar/ruby/2.2.2/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (104.0ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (20.6ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (13.6ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (517.5ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (1.0ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (1.1ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.8ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (1.1ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (303.7ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.8ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (35.2ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (680.4ms)
+
+
+Started GET "/goals/new.1" for ::1 at 2015-12-03 20:24:02 -0500
+
+NoMethodError (undefined method `action' for GoalsController:Class):
+  actionpack (4.2.5) lib/action_dispatch/routing/route_set.rb:76:in `dispatch'
+  actionpack (4.2.5) lib/action_dispatch/routing/route_set.rb:45:in `serve'
+  actionpack (4.2.5) lib/action_dispatch/journey/router.rb:43:in `block in serve'
+  actionpack (4.2.5) lib/action_dispatch/journey/router.rb:30:in `each'
+  actionpack (4.2.5) lib/action_dispatch/journey/router.rb:30:in `serve'
+  actionpack (4.2.5) lib/action_dispatch/routing/route_set.rb:817:in `call'
+  rack (1.6.4) lib/rack/etag.rb:24:in `call'
+  rack (1.6.4) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.6.4) lib/rack/head.rb:13:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/flash.rb:260:in `call'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.2.5) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.2.5) lib/active_record/connection_adapters/abstract/connection_pool.rb:653:in `call'
+  activerecord (4.2.5) lib/active_record/migration.rb:377:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.5) lib/active_support/callbacks.rb:88:in `__run_callbacks__'
+  activesupport (4.2.5) lib/active_support/callbacks.rb:778:in `_run_call_callbacks'
+  activesupport (4.2.5) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.5) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.5) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.5) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.5) lib/rails/engine.rb:518:in `call'
+  railties (4.2.5) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /usr/local/Cellar/ruby/2.2.2/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /usr/local/Cellar/ruby/2.2.2/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /usr/local/Cellar/ruby/2.2.2/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (16.8ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (6.5ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (7.6ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (169.6ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (1.3ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (1.4ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (1.0ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (1.3ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (235.1ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (1.6ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (176.4ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (759.7ms)
+
+
+Started GET "/clients/1" for ::1 at 2015-12-03 20:24:04 -0500
+Processing by ClientsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mClient Load (0.5ms)[0m  [1mSELECT  "clients".* FROM "clients" WHERE "clients"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mGoal Load (0.4ms)[0m  SELECT "goals".* FROM "goals" WHERE "goals"."client_id" = $1  [["client_id", 1]]
+  Rendered clients/show.html.erb within layouts/application (59.0ms)
+  [1m[36mCoach Load (0.3ms)[0m  [1mSELECT  "coaches".* FROM "coaches" WHERE "coaches"."id" = $1 LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 791ms (Views: 723.6ms | ActiveRecord: 11.0ms)
+
+
+Started GET "/goals/new.1" for ::1 at 2015-12-03 20:24:06 -0500
+
+NoMethodError (undefined method `action' for GoalsController:Class):
+  actionpack (4.2.5) lib/action_dispatch/routing/route_set.rb:76:in `dispatch'
+  actionpack (4.2.5) lib/action_dispatch/routing/route_set.rb:45:in `serve'
+  actionpack (4.2.5) lib/action_dispatch/journey/router.rb:43:in `block in serve'
+  actionpack (4.2.5) lib/action_dispatch/journey/router.rb:30:in `each'
+  actionpack (4.2.5) lib/action_dispatch/journey/router.rb:30:in `serve'
+  actionpack (4.2.5) lib/action_dispatch/routing/route_set.rb:817:in `call'
+  rack (1.6.4) lib/rack/etag.rb:24:in `call'
+  rack (1.6.4) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.6.4) lib/rack/head.rb:13:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/flash.rb:260:in `call'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.2.5) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.2.5) lib/active_record/connection_adapters/abstract/connection_pool.rb:653:in `call'
+  activerecord (4.2.5) lib/active_record/migration.rb:377:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.5) lib/active_support/callbacks.rb:88:in `__run_callbacks__'
+  activesupport (4.2.5) lib/active_support/callbacks.rb:778:in `_run_call_callbacks'
+  activesupport (4.2.5) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.5) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.5) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.5) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.5) lib/rails/engine.rb:518:in `call'
+  railties (4.2.5) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /usr/local/Cellar/ruby/2.2.2/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /usr/local/Cellar/ruby/2.2.2/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /usr/local/Cellar/ruby/2.2.2/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.0ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (6.4ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.2ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (155.4ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.7ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (2.2ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (162.5ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.6ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (3.1ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (385.9ms)
+
+
+Started GET "/clients/1" for ::1 at 2015-12-03 20:24:25 -0500
+Processing by ClientsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mClient Load (63.4ms)[0m  SELECT  "clients".* FROM "clients" WHERE "clients"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mGoal Load (0.5ms)[0m  [1mSELECT "goals".* FROM "goals" WHERE "goals"."client_id" = $1[0m  [["client_id", 1]]
+  Rendered clients/show.html.erb within layouts/application (47.5ms)
+  [1m[35mCoach Load (0.4ms)[0m  SELECT  "coaches".* FROM "coaches" WHERE "coaches"."id" = $1 LIMIT 1  [["id", 1]]
+Completed 200 OK in 566ms (Views: 484.0ms | ActiveRecord: 64.3ms)
+
+
+Started GET "/clients/1" for ::1 at 2015-12-03 20:24:59 -0500
+Processing by ClientsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mClient Load (1.5ms)[0m  [1mSELECT  "clients".* FROM "clients" WHERE "clients"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered clients/show.html.erb within layouts/application (9.7ms)
+Completed 500 Internal Server Error in 70ms (ActiveRecord: 1.5ms)
+
+SyntaxError (/Users/Dom/Desktop/coachr/app/views/clients/show.html.erb:6: syntax error, unexpected keyword_ensure, expecting ')'
+/Users/Dom/Desktop/coachr/app/views/clients/show.html.erb:8: syntax error, unexpected keyword_end, expecting ')'):
+  app/views/clients/show.html.erb:6: syntax error, unexpected keyword_ensure, expecting ')'
+  app/views/clients/show.html.erb:8: syntax error, unexpected keyword_end, expecting ')'
+
+
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (71.0ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (26.1ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.3ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (328.2ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (26.4ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (1.2ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.6ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (142.2ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.9ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.7ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (381.3ms)
+
+
+Started GET "/clients/1" for ::1 at 2015-12-03 20:25:32 -0500
+Processing by ClientsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mClient Load (0.6ms)[0m  SELECT  "clients".* FROM "clients" WHERE "clients"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mGoal Load (0.6ms)[0m  [1mSELECT "goals".* FROM "goals" WHERE "goals"."client_id" = $1[0m  [["client_id", 1]]
+  Rendered clients/show.html.erb within layouts/application (6.8ms)
+  [1m[35mCoach Load (0.4ms)[0m  SELECT  "coaches".* FROM "coaches" WHERE "coaches"."id" = $1 LIMIT 1  [["id", 1]]
+Completed 200 OK in 306ms (Views: 301.3ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-12-03 20:25:33 -0500
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-12-03 20:25:33 -0500
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-12-03 20:25:33 -0500
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-12-03 20:25:33 -0500
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-12-03 20:25:33 -0500
+
+
+Started GET "/assets/layout.self-60270fdc5cb5a60e24a0eca8b617c4b151becfe376e80df16fedb1c4562edea1.css?body=1" for ::1 at 2015-12-03 20:25:33 -0500
+
+
+Started GET "/goals/new" for ::1 at 2015-12-03 20:25:37 -0500
+
+NoMethodError (undefined method `action' for GoalsController:Class):
+  actionpack (4.2.5) lib/action_dispatch/routing/route_set.rb:76:in `dispatch'
+  actionpack (4.2.5) lib/action_dispatch/routing/route_set.rb:45:in `serve'
+  actionpack (4.2.5) lib/action_dispatch/journey/router.rb:43:in `block in serve'
+  actionpack (4.2.5) lib/action_dispatch/journey/router.rb:30:in `each'
+  actionpack (4.2.5) lib/action_dispatch/journey/router.rb:30:in `serve'
+  actionpack (4.2.5) lib/action_dispatch/routing/route_set.rb:817:in `call'
+  rack (1.6.4) lib/rack/etag.rb:24:in `call'
+  rack (1.6.4) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.6.4) lib/rack/head.rb:13:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/flash.rb:260:in `call'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.2.5) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.2.5) lib/active_record/connection_adapters/abstract/connection_pool.rb:653:in `call'
+  activerecord (4.2.5) lib/active_record/migration.rb:377:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.5) lib/active_support/callbacks.rb:88:in `__run_callbacks__'
+  activesupport (4.2.5) lib/active_support/callbacks.rb:778:in `_run_call_callbacks'
+  activesupport (4.2.5) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.5) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.5) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.5) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.5) lib/rails/engine.rb:518:in `call'
+  railties (4.2.5) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /usr/local/Cellar/ruby/2.2.2/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /usr/local/Cellar/ruby/2.2.2/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /usr/local/Cellar/ruby/2.2.2/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (111.8ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.2ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (5.7ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (425.1ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (1.2ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (129.2ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.8ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (270.0ms)
+
+
+Started GET "/goals/new" for ::1 at 2015-12-03 20:25:39 -0500
+
+NoMethodError (undefined method `action' for GoalsController:Class):
+  actionpack (4.2.5) lib/action_dispatch/routing/route_set.rb:76:in `dispatch'
+  actionpack (4.2.5) lib/action_dispatch/routing/route_set.rb:45:in `serve'
+  actionpack (4.2.5) lib/action_dispatch/journey/router.rb:43:in `block in serve'
+  actionpack (4.2.5) lib/action_dispatch/journey/router.rb:30:in `each'
+  actionpack (4.2.5) lib/action_dispatch/journey/router.rb:30:in `serve'
+  actionpack (4.2.5) lib/action_dispatch/routing/route_set.rb:817:in `call'
+  rack (1.6.4) lib/rack/etag.rb:24:in `call'
+  rack (1.6.4) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.6.4) lib/rack/head.rb:13:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/flash.rb:260:in `call'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.2.5) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.2.5) lib/active_record/connection_adapters/abstract/connection_pool.rb:653:in `call'
+  activerecord (4.2.5) lib/active_record/migration.rb:377:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.5) lib/active_support/callbacks.rb:88:in `__run_callbacks__'
+  activesupport (4.2.5) lib/active_support/callbacks.rb:778:in `_run_call_callbacks'
+  activesupport (4.2.5) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.5) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.5) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.5) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.5) lib/rails/engine.rb:518:in `call'
+  railties (4.2.5) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /usr/local/Cellar/ruby/2.2.2/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /usr/local/Cellar/ruby/2.2.2/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /usr/local/Cellar/ruby/2.2.2/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.5ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.8ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (105.8ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (39.3ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (171.2ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.6ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.8ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (284.6ms)
+
+
+Started GET "/clients/1" for ::1 at 2015-12-03 20:27:15 -0500
+Processing by ClientsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mClient Load (0.3ms)[0m  [1mSELECT  "clients".* FROM "clients" WHERE "clients"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mGoal Load (0.3ms)[0m  SELECT "goals".* FROM "goals" WHERE "goals"."client_id" = $1  [["client_id", 1]]
+  Rendered clients/show.html.erb within layouts/application (307.4ms)
+  [1m[36mCoach Load (0.3ms)[0m  [1mSELECT  "coaches".* FROM "coaches" WHERE "coaches"."id" = $1 LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 1263ms (Views: 1116.6ms | ActiveRecord: 94.8ms)
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-12-03 20:27:19 -0500
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-12-03 20:27:19 -0500
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-12-03 20:27:19 -0500
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-12-03 20:27:19 -0500
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-12-03 20:27:19 -0500
+
+
+Started GET "/assets/layout.self-60270fdc5cb5a60e24a0eca8b617c4b151becfe376e80df16fedb1c4562edea1.css?body=1" for ::1 at 2015-12-03 20:27:19 -0500
+
+
+Started GET "/goals/new" for ::1 at 2015-12-03 20:27:23 -0500
+Processing by GoalsController#new as HTML
+  Rendered goals/new.html.erb within layouts/application (54.9ms)
+  [1m[35mCoach Load (0.3ms)[0m  SELECT  "coaches".* FROM "coaches" WHERE "coaches"."id" = $1 LIMIT 1  [["id", 1]]
+Completed 200 OK in 208ms (Views: 206.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/clients/1" for ::1 at 2015-12-03 20:39:09 -0500
+Processing by ClientsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mClient Load (0.5ms)[0m  [1mSELECT  "clients".* FROM "clients" WHERE "clients"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mGoal Load (0.3ms)[0m  SELECT "goals".* FROM "goals" WHERE "goals"."client_id" = $1  [["client_id", 1]]
+  Rendered clients/show.html.erb within layouts/application (151.7ms)
+  [1m[36mCoach Load (2.5ms)[0m  [1mSELECT  "coaches".* FROM "coaches" WHERE "coaches"."id" = $1 LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 780ms (Views: 650.4ms | ActiveRecord: 47.0ms)
+
+
+Started GET "/goals/new" for ::1 at 2015-12-03 20:39:11 -0500
+Processing by GoalsController#new as HTML
+  Rendered goals/new.html.erb within layouts/application (1.0ms)
+  [1m[35mCoach Load (1.4ms)[0m  SELECT  "coaches".* FROM "coaches" WHERE "coaches"."id" = $1 LIMIT 1  [["id", 1]]
+Completed 200 OK in 281009ms (Views: 811.5ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/assets/layout.self-60270fdc5cb5a60e24a0eca8b617c4b151becfe376e80df16fedb1c4562edea1.css?body=1" for ::1 at 2015-12-03 20:43:52 -0500
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-12-03 20:43:52 -0500
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-12-03 20:43:52 -0500
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-12-03 20:43:52 -0500
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-12-03 20:43:52 -0500
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-12-03 20:43:52 -0500
+
+
+Started GET "/clients/1" for ::1 at 2015-12-03 20:44:08 -0500
+Processing by ClientsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mClient Load (0.6ms)[0m  [1mSELECT  "clients".* FROM "clients" WHERE "clients"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mGoal Load (0.4ms)[0m  SELECT "goals".* FROM "goals" WHERE "goals"."client_id" = $1  [["client_id", 1]]
+  Rendered clients/show.html.erb within layouts/application (6.7ms)
+  [1m[36mCoach Load (0.3ms)[0m  [1mSELECT  "coaches".* FROM "coaches" WHERE "coaches"."id" = $1 LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 348ms (Views: 309.0ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/assets/layout.self-60270fdc5cb5a60e24a0eca8b617c4b151becfe376e80df16fedb1c4562edea1.css?body=1" for ::1 at 2015-12-03 20:44:08 -0500
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-12-03 20:44:08 -0500
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-12-03 20:44:08 -0500
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-12-03 20:44:08 -0500
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-12-03 20:44:08 -0500
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-12-03 20:44:08 -0500
+
+
+Started GET "/goals/new" for ::1 at 2015-12-03 20:44:13 -0500
+Processing by GoalsController#new as HTML
+  Rendered goals/new.html.erb within layouts/application (0.1ms)
+  [1m[35mCoach Load (0.3ms)[0m  SELECT  "coaches".* FROM "coaches" WHERE "coaches"."id" = $1 LIMIT 1  [["id", 1]]
+Completed 200 OK in 27899ms (Views: 115.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/clients/1" for ::1 at 2015-12-03 20:50:54 -0500
+Processing by ClientsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mClient Load (1.7ms)[0m  [1mSELECT  "clients".* FROM "clients" WHERE "clients"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mGoal Load (0.5ms)[0m  SELECT "goals".* FROM "goals" WHERE "goals"."client_id" = $1  [["client_id", 1]]
+  Rendered clients/show.html.erb within layouts/application (43.3ms)
+  [1m[36mCoach Load (0.6ms)[0m  [1mSELECT  "coaches".* FROM "coaches" WHERE "coaches"."id" = $1 LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 505ms (Views: 454.7ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/assets/layout.self-60270fdc5cb5a60e24a0eca8b617c4b151becfe376e80df16fedb1c4562edea1.css?body=1" for ::1 at 2015-12-03 20:50:55 -0500
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-12-03 20:50:55 -0500
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-12-03 20:50:55 -0500
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-12-03 20:50:55 -0500
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-12-03 20:50:55 -0500
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-12-03 20:50:55 -0500
+
+
+Started GET "/goals/new?data%5Bclient-id%5D=1" for ::1 at 2015-12-03 20:50:58 -0500
+Processing by GoalsController#new as HTML
+  Parameters: {"data"=>{"client-id"=>"1"}}
+  Rendered goals/new.html.erb within layouts/application (0.2ms)
+  [1m[35mCoach Load (0.3ms)[0m  SELECT  "coaches".* FROM "coaches" WHERE "coaches"."id" = $1 LIMIT 1  [["id", 1]]
+Completed 200 OK in 34569ms (Views: 151.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/clients/1" for ::1 at 2015-12-03 20:52:12 -0500
+Processing by ClientsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mClient Load (0.3ms)[0m  [1mSELECT  "clients".* FROM "clients" WHERE "clients"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered clients/show.html.erb within layouts/application (2.4ms)
+Completed 500 Internal Server Error in 68ms (ActiveRecord: 0.3ms)
+
+SyntaxError (/Users/Dom/Desktop/coachr/app/views/clients/show.html.erb:2: syntax error, unexpected tSTRING_DEND, expecting ')'
+...'data-client-id' => @client.id} )) );@output_buffer.safe_app...
+...                               ^
+/Users/Dom/Desktop/coachr/app/views/clients/show.html.erb:6: syntax error, unexpected keyword_ensure, expecting ')'
+/Users/Dom/Desktop/coachr/app/views/clients/show.html.erb:8: syntax error, unexpected keyword_end, expecting ')'):
+  app/views/clients/show.html.erb:2: syntax error, unexpected tSTRING_DEND, expecting ')'
+  app/views/clients/show.html.erb:6: syntax error, unexpected keyword_ensure, expecting ')'
+  app/views/clients/show.html.erb:8: syntax error, unexpected keyword_end, expecting ')'
+
+
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (219.0ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (7.4ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (390.9ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (1.3ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (1.1ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.6ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (175.8ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.8ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (360.1ms)
+
+
+Started GET "/clients/1" for ::1 at 2015-12-03 20:52:50 -0500
+Processing by ClientsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mClient Load (0.3ms)[0m  SELECT  "clients".* FROM "clients" WHERE "clients"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mGoal Load (0.3ms)[0m  [1mSELECT "goals".* FROM "goals" WHERE "goals"."client_id" = $1[0m  [["client_id", 1]]
+  Rendered clients/show.html.erb within layouts/application (4.2ms)
+  [1m[35mCoach Load (0.4ms)[0m  SELECT  "coaches".* FROM "coaches" WHERE "coaches"."id" = $1 LIMIT 1  [["id", 1]]
+Completed 200 OK in 719ms (Views: 715.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-12-03 20:52:51 -0500
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-12-03 20:52:51 -0500
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-12-03 20:52:51 -0500
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-12-03 20:52:51 -0500
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-12-03 20:52:51 -0500
+
+
+Started GET "/assets/layout.self-60270fdc5cb5a60e24a0eca8b617c4b151becfe376e80df16fedb1c4562edea1.css?body=1" for ::1 at 2015-12-03 20:52:51 -0500
+
+
+Started GET "/goals/new?data-client-id=1" for ::1 at 2015-12-03 20:52:57 -0500
+Processing by GoalsController#new as HTML
+  Parameters: {"data-client-id"=>"1"}
+  Rendered goals/new.html.erb within layouts/application (1.0ms)
+  [1m[36mCoach Load (1.9ms)[0m  [1mSELECT  "coaches".* FROM "coaches" WHERE "coaches"."id" = $1 LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 76091ms (Views: 554.4ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/clients/1" for ::1 at 2015-12-03 20:54:19 -0500
+Processing by ClientsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mClient Load (0.4ms)[0m  SELECT  "clients".* FROM "clients" WHERE "clients"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mGoal Load (0.3ms)[0m  [1mSELECT "goals".* FROM "goals" WHERE "goals"."client_id" = $1[0m  [["client_id", 1]]
+  Rendered clients/show.html.erb within layouts/application (55.4ms)
+  [1m[35mCoach Load (0.3ms)[0m  SELECT  "coaches".* FROM "coaches" WHERE "coaches"."id" = $1 LIMIT 1  [["id", 1]]
+Completed 200 OK in 407ms (Views: 300.5ms | ActiveRecord: 54.6ms)
+
+
+Started GET "/assets/layout.self-60270fdc5cb5a60e24a0eca8b617c4b151becfe376e80df16fedb1c4562edea1.css?body=1" for ::1 at 2015-12-03 20:54:20 -0500
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-12-03 20:54:20 -0500
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-12-03 20:54:20 -0500
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-12-03 20:54:20 -0500
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-12-03 20:54:20 -0500
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-12-03 20:54:21 -0500
+
+
+Started GET "/goals/new?data-client-id=1" for ::1 at 2015-12-03 20:54:47 -0500
+Processing by GoalsController#new as HTML
+  Parameters: {"data-client-id"=>"1"}
+  Rendered goals/new.html.erb within layouts/application (0.9ms)
+  [1m[36mCoach Load (1.0ms)[0m  [1mSELECT  "coaches".* FROM "coaches" WHERE "coaches"."id" = $1 LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 82112ms (Views: 335.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/goals/new?data-client-id=1" for ::1 at 2015-12-03 21:15:12 -0500
+Processing by GoalsController#new as HTML
+  Parameters: {"data-client-id"=>"1"}
+  Rendered goals/new.html.erb within layouts/application (114.4ms)
+Completed 500 Internal Server Error in 9394ms (ActiveRecord: 35.3ms)
+
+SyntaxError (/Users/Dom/Desktop/coachr/app/views/goals/new.html.erb:8: syntax error, unexpected ')', expecting :: or '[' or '.'
+..._buffer.append=( f.submit, "" );@output_buffer.safe_append='
+...                               ^
+/Users/Dom/Desktop/coachr/app/views/goals/new.html.erb:9: syntax error, unexpected keyword_end, expecting ')'
+  '.freeze; end ;@output_buffer.to_s
+               ^
+/Users/Dom/Desktop/coachr/app/views/goals/new.html.erb:10: syntax error, unexpected keyword_ensure, expecting ')'
+/Users/Dom/Desktop/coachr/app/views/goals/new.html.erb:12: syntax error, unexpected keyword_end, expecting ')'):
+  app/views/goals/new.html.erb:8: syntax error, unexpected ')', expecting :: or '[' or '.'
+  app/views/goals/new.html.erb:9: syntax error, unexpected keyword_end, expecting ')'
+  app/views/goals/new.html.erb:10: syntax error, unexpected keyword_ensure, expecting ')'
+  app/views/goals/new.html.erb:12: syntax error, unexpected keyword_end, expecting ')'
+
+
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (75.3ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (8.7ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (3.2ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (624.3ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (1.3ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.6ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (251.2ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.8ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (490.9ms)
+
+
+Started GET "/goals/new?data-client-id=1" for ::1 at 2015-12-03 21:15:49 -0500
+Processing by GoalsController#new as HTML
+  Parameters: {"data-client-id"=>"1"}
+  Rendered goals/new.html.erb within layouts/application (1433.8ms)
+  [1m[35mCoach Load (0.5ms)[0m  SELECT  "coaches".* FROM "coaches" WHERE "coaches"."id" = $1 LIMIT 1  [["id", 1]]
+Completed 200 OK in 1947ms (Views: 1716.6ms | ActiveRecord: 170.6ms)
+
+
+Started GET "/assets/layout.self-60270fdc5cb5a60e24a0eca8b617c4b151becfe376e80df16fedb1c4562edea1.css?body=1" for ::1 at 2015-12-03 21:15:52 -0500
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-12-03 21:15:52 -0500
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-12-03 21:15:52 -0500
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-12-03 21:15:52 -0500
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-12-03 21:15:52 -0500
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-12-03 21:15:52 -0500
+
+
+Started GET "/goals/new?data-client-id=1" for ::1 at 2015-12-03 21:16:05 -0500
+Processing by GoalsController#new as HTML
+  Parameters: {"data-client-id"=>"1"}
+  Rendered goals/new.html.erb within layouts/application (3.4ms)
+  [1m[36mCoach Load (0.3ms)[0m  [1mSELECT  "coaches".* FROM "coaches" WHERE "coaches"."id" = $1 LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 100ms (Views: 98.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/layout.self-60270fdc5cb5a60e24a0eca8b617c4b151becfe376e80df16fedb1c4562edea1.css?body=1" for ::1 at 2015-12-03 21:16:06 -0500
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-12-03 21:16:06 -0500
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-12-03 21:16:06 -0500
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-12-03 21:16:06 -0500
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-12-03 21:16:06 -0500
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-12-03 21:16:06 -0500
+
+
+Started POST "/goals" for ::1 at 2015-12-03 21:20:18 -0500
+Processing by GoalsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"bawruiE5b+3nbOmOyheQoelh355Lfde4cdyqb8c8M5UUhT36FzsPWP1R5lBY0Ezlg1wPyzczBj6aGD2g1Y88FA==", "goal"=>{"statement"=>"Get an offer letter back.", "notes"=>"No less than 90K", "client_id"=>"1", "completed"=>"false"}, "commit"=>"Create Goal"}
+  [1m[35m (65.0ms)[0m  BEGIN
+  [1m[36mSQL (544.1ms)[0m  [1mINSERT INTO "goals" ("statement", "notes", "client_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["statement", "Get an offer letter back."], ["notes", "No less than 90K"], ["client_id", 1], ["created_at", "2015-12-04 02:20:32.230604"], ["updated_at", "2015-12-04 02:20:32.230604"]]
+  [1m[35m (94.6ms)[0m  COMMIT
+Redirected to http://localhost:3000/clients/6
+Completed 302 Found in 14326ms (ActiveRecord: 740.1ms)
+
+
+Started GET "/clients/6" for ::1 at 2015-12-03 21:20:33 -0500
+Processing by ClientsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mClient Load (0.3ms)[0m  [1mSELECT  "clients".* FROM "clients" WHERE "clients"."id" = $1 LIMIT 1[0m  [["id", 6]]
+Completed 404 Not Found in 36ms (ActiveRecord: 2.1ms)
+
+ActiveRecord::RecordNotFound (Couldn't find Client with 'id'=6):
+  app/controllers/clients_controller.rb:54:in `show'
+
+
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (71.3ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.6ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.8ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (179.6ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.8ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (1.1ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.6ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (259.7ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.7ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (431.3ms)
+
+
+Started GET "/clients/1" for ::1 at 2015-12-03 21:26:17 -0500
+Processing by ClientsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mClient Load (0.5ms)[0m  SELECT  "clients".* FROM "clients" WHERE "clients"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mGoal Load (0.3ms)[0m  [1mSELECT "goals".* FROM "goals" WHERE "goals"."client_id" = $1[0m  [["client_id", 1]]
+  Rendered clients/show.html.erb within layouts/application (110.4ms)
+  [1m[35mCoach Load (0.3ms)[0m  SELECT  "coaches".* FROM "coaches" WHERE "coaches"."id" = $1 LIMIT 1  [["id", 1]]
+Completed 200 OK in 646ms (Views: 486.4ms | ActiveRecord: 98.4ms)
+
+
+Started GET "/goals/new?data-client-id=1" for ::1 at 2015-12-03 21:26:26 -0500
+Processing by GoalsController#new as HTML
+  Parameters: {"data-client-id"=>"1"}
+  Rendered goals/new.html.erb within layouts/application (8.3ms)
+  [1m[36mCoach Load (0.3ms)[0m  [1mSELECT  "coaches".* FROM "coaches" WHERE "coaches"."id" = $1 LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 576ms (Views: 574.1ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/goals" for ::1 at 2015-12-03 21:26:39 -0500
+Processing by GoalsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Lr2M3rhrFy+MQk5hTCnCn2Jun/ppvnOk02BS2pqocUlXlJqejml3mpZ/Qb/e7h7bCFNPrxXwoiI4pMUViBt+yA==", "goal"=>{"statement"=>"Finish up portfolio options", "notes"=>"", "client_id"=>"1", "completed"=>"false"}, "commit"=>"Create Goal"}
+  [1m[35m (0.7ms)[0m  BEGIN
+  [1m[36mSQL (2.4ms)[0m  [1mINSERT INTO "goals" ("statement", "notes", "client_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["statement", "Finish up portfolio options"], ["notes", ""], ["client_id", 1], ["created_at", "2015-12-04 02:27:06.336065"], ["updated_at", "2015-12-04 02:27:06.336065"]]
+  [1m[35m (33.9ms)[0m  COMMIT
+  [1m[36mClient Load (0.4ms)[0m  [1mSELECT  "clients".* FROM "clients" WHERE "clients"."id" = $1 LIMIT 1[0m  [["id", 1]]
+Redirected to http://localhost:3000/clients/1
+Completed 302 Found in 26473ms (ActiveRecord: 37.3ms)
+
+
+Started GET "/clients/1" for ::1 at 2015-12-03 21:27:06 -0500
+Processing by ClientsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mClient Load (0.4ms)[0m  SELECT  "clients".* FROM "clients" WHERE "clients"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mGoal Load (0.4ms)[0m  [1mSELECT "goals".* FROM "goals" WHERE "goals"."client_id" = $1[0m  [["client_id", 1]]
+  Rendered clients/show.html.erb within layouts/application (6.2ms)
+  [1m[35mCoach Load (0.5ms)[0m  SELECT  "coaches".* FROM "coaches" WHERE "coaches"."id" = $1 LIMIT 1  [["id", 1]]
+Completed 200 OK in 291ms (Views: 275.1ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/coaches/1" for ::1 at 2015-12-03 21:34:59 -0500
+Processing by CoachesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCoach Load (0.3ms)[0m  [1mSELECT  "coaches".* FROM "coaches" WHERE "coaches"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mClient Load (0.4ms)[0m  SELECT "clients".* FROM "clients" WHERE "clients"."coach_id" = $1  [["coach_id", 1]]
+  Rendered coaches/show.html.erb within layouts/application (234.2ms)
+  [1m[36mCoach Load (0.5ms)[0m  [1mSELECT  "coaches".* FROM "coaches" WHERE "coaches"."id" = $1 LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 911ms (Views: 744.5ms | ActiveRecord: 13.1ms)
+
+
+Started GET "/clients/2" for ::1 at 2015-12-03 21:35:04 -0500
+Processing by ClientsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mClient Load (1.2ms)[0m  SELECT  "clients".* FROM "clients" WHERE "clients"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mGoal Load (0.3ms)[0m  [1mSELECT "goals".* FROM "goals" WHERE "goals"."client_id" = $1[0m  [["client_id", 2]]
+  Rendered clients/show.html.erb within layouts/application (99.2ms)
+  [1m[35mCoach Load (0.3ms)[0m  SELECT  "coaches".* FROM "coaches" WHERE "coaches"."id" = $1 LIMIT 1  [["id", 1]]
+Completed 200 OK in 303ms (Views: 288.2ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/goals/new?data-client-id=2" for ::1 at 2015-12-03 21:35:06 -0500
+Processing by GoalsController#new as HTML
+  Parameters: {"data-client-id"=>"2"}
+  Rendered goals/new.html.erb within layouts/application (4.3ms)
+  [1m[36mCoach Load (0.3ms)[0m  [1mSELECT  "coaches".* FROM "coaches" WHERE "coaches"."id" = $1 LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 257ms (Views: 255.0ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/goals" for ::1 at 2015-12-03 21:35:43 -0500
+Processing by GoalsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"oc0G7Hh8G9VD0l6JQXEGqhXDFZrezfd6ybuICpZh5ffY5BCsTn57YFnvUVfTttruf/7Fz6KDJvwifx/FhNLqdg==", "goal"=>{"statement"=>"Make it to tommorrow", "notes"=>"", "client_id"=>"2", "completed"=>"false"}, "commit"=>"Create Goal"}
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mSQL (81.3ms)[0m  [1mINSERT INTO "goals" ("statement", "notes", "client_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["statement", "Make it to tommorrow"], ["notes", ""], ["client_id", 2], ["created_at", "2015-12-04 02:35:43.705964"], ["updated_at", "2015-12-04 02:35:43.705964"]]
+  [1m[35m (110.2ms)[0m  COMMIT
+  [1m[36mClient Load (35.6ms)[0m  [1mSELECT  "clients".* FROM "clients" WHERE "clients"."id" = $1 LIMIT 1[0m  [["id", 2]]
+Redirected to http://localhost:3000/clients/2
+Completed 302 Found in 349ms (ActiveRecord: 227.3ms)
+
+
+Started GET "/clients/2" for ::1 at 2015-12-03 21:35:44 -0500
+Processing by ClientsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mClient Load (0.4ms)[0m  SELECT  "clients".* FROM "clients" WHERE "clients"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mGoal Load (0.3ms)[0m  [1mSELECT "goals".* FROM "goals" WHERE "goals"."client_id" = $1[0m  [["client_id", 2]]
+  Rendered clients/show.html.erb within layouts/application (3.1ms)
+  [1m[35mCoach Load (1.0ms)[0m  SELECT  "coaches".* FROM "coaches" WHERE "coaches"."id" = $1 LIMIT 1  [["id", 1]]
+Completed 200 OK in 863ms (Views: 859.7ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/coaches/1" for ::1 at 2015-12-03 21:35:49 -0500
+Processing by CoachesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCoach Load (1.6ms)[0m  [1mSELECT  "coaches".* FROM "coaches" WHERE "coaches"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mClient Load (0.7ms)[0m  SELECT "clients".* FROM "clients" WHERE "clients"."coach_id" = $1  [["coach_id", 1]]
+  Rendered coaches/show.html.erb within layouts/application (12.1ms)
+  [1m[36mCoach Load (0.3ms)[0m  [1mSELECT  "coaches".* FROM "coaches" WHERE "coaches"."id" = $1 LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 249ms (Views: 217.5ms | ActiveRecord: 2.5ms)

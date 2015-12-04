@@ -1,1 +1,5 @@
+
 <p> <%= @coach.full_name %> </p>
+<% @coach.clients.each do |client| %>
+ <p> <%= link_to(client.full_name, client_path(client)) %> </p>
+  <% end %>

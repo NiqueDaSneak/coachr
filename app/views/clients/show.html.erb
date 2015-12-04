@@ -1,1 +1,5 @@
-show.html.erb
+<p> <%= @client.full_name %> </p>
+<%= link_to("Add New Goal", new_goal_path( :'data-client-id' => @client.id )) %>
+<% @client.goals.each do |goal| %>
+  <p> <%= goal.statement %> </p>
+  <% end %>

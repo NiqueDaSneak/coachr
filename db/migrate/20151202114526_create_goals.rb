@@ -4,6 +4,7 @@ class CreateGoals < ActiveRecord::Migration
       t.string :statement, null: false
       t.string :notes
       t.references :client, null: false
+      t.boolean :completed, :default => false
 
       t.timestamps null: false
     end

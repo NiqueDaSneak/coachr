@@ -36,11 +36,12 @@ ActiveRecord::Schema.define(version: 20151202114526) do
   end
 
   create_table "goals", force: :cascade do |t|
-    t.string   "statement",  null: false
+    t.string   "statement",                  null: false
     t.string   "notes"
-    t.integer  "client_id",  null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer  "client_id",                  null: false
+    t.boolean  "completed",  default: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
   end
 
 end

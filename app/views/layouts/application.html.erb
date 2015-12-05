@@ -8,20 +8,21 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<header>
-<% if coach_logged_in? %>
+  <% if coach_logged_in? %>
+  <header>
+    <%= link_to("Home", coach_path(current_coach)) %>
+    <%= link_to("Log Out", logout_path) %>
+    <%= link_to("Create New Client", new_client_path) %>
+  </header>
+  <% end %>
 
-<%= link_to("Home", coach_path(current_coach)) %>
-<%= link_to("Log Out", logout_path) %>
-<%= link_to("Create New Client", new_client_path) %>
-<% end %>
-
-<% if client_logged_in? %>
-<%= link_to("Home", client_path) %>
-<%= link_to("Log Out", logout_path) %>
-<% end %>
-</header>
-<%= yield %>
+  <% if client_logged_in? %>
+  <header>
+    <%= link_to("Home", client_path) %>
+    <%= link_to("Log Out", logout_path) %>
+  </header>
+  <% end %>
+  <%= yield %>
 
 </body>
 </html>

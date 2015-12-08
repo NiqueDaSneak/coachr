@@ -6671,3 +6671,197 @@ ActionController::RoutingError (No route matches [GET] "/imgs/clarity-bg-mobile.
   Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
   Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
   Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (266.1ms)
+
+
+Started GET "/" for ::1 at 2015-12-07 22:58:20 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (1.9ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 1641ms (Views: 1524.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/login.self-df3bc5bccc5036fe365fd87553d0e6afe4c4f09e1c83f381191df25484e2cfb3.css?body=1" for ::1 at 2015-12-07 22:58:26 -0500
+
+
+Started GET "/coaches/new" for ::1 at 2015-12-07 23:00:22 -0500
+Processing by CoachesController#new as HTML
+  Rendered coaches/new.html.erb within layouts/application (95.3ms)
+Completed 200 OK in 499ms (Views: 320.7ms | ActiveRecord: 125.8ms)
+
+
+Started GET "/coach/login" for ::1 at 2015-12-07 23:00:32 -0500
+Processing by CoachesController#login as HTML
+  Rendered coaches/login.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 82ms (Views: 81.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/coach/login" for ::1 at 2015-12-07 23:02:31 -0500
+Processing by CoachesController#login as HTML
+  Rendered coaches/login.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 692ms (Views: 691.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/layout.self-a41a44c03252ee7ee0c9862df5f7c08c530f3da295920b013cd9b17f2148bf4f.css?body=1" for ::1 at 2015-12-07 23:02:32 -0500
+
+
+Started GET "/assets/signup-login.self-df3bc5bccc5036fe365fd87553d0e6afe4c4f09e1c83f381191df25484e2cfb3.css?body=1" for ::1 at 2015-12-07 23:02:32 -0500
+
+
+Started GET "/assets/welcome-index.self-26210b7111867ea756629a382ade4c50cb4bda4a97c2ba60400f4ec289b787d1.css?body=1" for ::1 at 2015-12-07 23:02:32 -0500
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-12-07 23:02:32 -0500
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-12-07 23:02:32 -0500
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-12-07 23:02:32 -0500
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-12-07 23:02:32 -0500
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-12-07 23:02:32 -0500
+
+
+Started GET "/" for ::1 at 2015-12-07 23:05:06 -0500
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 514ms (Views: 513.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2015-12-07 23:05:07 -0500
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 53ms (Views: 52.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/signup-login.self-2a4c3632a60b3e0198982b537e055b5097f430dd46204c75a116ceda6ff2c769.css?body=1" for ::1 at 2015-12-07 23:05:07 -0500
+
+
+Started GET "/coaches/new" for ::1 at 2015-12-07 23:05:11 -0500
+Processing by CoachesController#new as HTML
+  Rendered coaches/new.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 52ms (Views: 50.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/coach/login" for ::1 at 2015-12-07 23:05:14 -0500
+Processing by CoachesController#login as HTML
+  Rendered coaches/login.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 78ms (Views: 76.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/coach/login" for ::1 at 2015-12-07 23:05:59 -0500
+Processing by CoachesController#login as HTML
+  Rendered coaches/login.html.erb within layouts/application (2.5ms)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.0ms)
+
+SyntaxError (/Users/Dom/Desktop/coachr/app/views/coaches/login.html.erb:13: syntax error, unexpected =>, expecting :: or '[' or '.'
+....append=( submit_tag, :class => "submit-button" );@output_bu...
+...                               ^):
+  app/views/coaches/login.html.erb:13: syntax error, unexpected =>, expecting :: or '[' or '.'
+
+
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (12.9ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.6ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (115.3ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.7ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (1.0ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (110.5ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.7ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (261.6ms)
+
+
+Started GET "/coach/login" for ::1 at 2015-12-07 23:06:21 -0500
+Processing by CoachesController#login as HTML
+  Rendered coaches/login.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 385ms (Views: 384.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/signup-login.self-2a4c3632a60b3e0198982b537e055b5097f430dd46204c75a116ceda6ff2c769.css?body=1" for ::1 at 2015-12-07 23:06:22 -0500
+
+
+Started GET "/assets/layout.self-a41a44c03252ee7ee0c9862df5f7c08c530f3da295920b013cd9b17f2148bf4f.css?body=1" for ::1 at 2015-12-07 23:06:22 -0500
+
+
+Started GET "/assets/welcome-index.self-26210b7111867ea756629a382ade4c50cb4bda4a97c2ba60400f4ec289b787d1.css?body=1" for ::1 at 2015-12-07 23:06:22 -0500
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-12-07 23:06:22 -0500
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-12-07 23:06:22 -0500
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-12-07 23:06:22 -0500
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-12-07 23:06:22 -0500
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-12-07 23:06:22 -0500
+
+
+Started GET "/coach/login" for ::1 at 2015-12-07 23:06:56 -0500
+Processing by CoachesController#login as HTML
+  Rendered coaches/login.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 54ms (Views: 53.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/layout.self-a41a44c03252ee7ee0c9862df5f7c08c530f3da295920b013cd9b17f2148bf4f.css?body=1" for ::1 at 2015-12-07 23:06:56 -0500
+
+
+Started GET "/assets/welcome-index.self-26210b7111867ea756629a382ade4c50cb4bda4a97c2ba60400f4ec289b787d1.css?body=1" for ::1 at 2015-12-07 23:06:56 -0500
+
+
+Started GET "/assets/signup-login.self-2a4c3632a60b3e0198982b537e055b5097f430dd46204c75a116ceda6ff2c769.css?body=1" for ::1 at 2015-12-07 23:06:56 -0500
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-12-07 23:06:56 -0500
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-12-07 23:06:56 -0500
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-12-07 23:06:56 -0500
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-12-07 23:06:56 -0500
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-12-07 23:06:56 -0500
+
+
+Started GET "/" for ::1 at 2015-12-07 23:07:09 -0500
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 106ms (Views: 105.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/coaches/new" for ::1 at 2015-12-07 23:07:10 -0500
+Processing by CoachesController#new as HTML
+  Rendered coaches/new.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 93ms (Views: 92.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/coach/login" for ::1 at 2015-12-07 23:07:15 -0500
+Processing by CoachesController#login as HTML
+  Rendered coaches/login.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 74ms (Views: 73.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/coaches/new" for ::1 at 2015-12-07 23:07:30 -0500
+Processing by CoachesController#new as HTML
+  Rendered coaches/new.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 49ms (Views: 48.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/coach/login" for ::1 at 2015-12-07 23:07:34 -0500
+Processing by CoachesController#login as HTML
+  Rendered coaches/login.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 52ms (Views: 51.1ms | ActiveRecord: 0.0ms)

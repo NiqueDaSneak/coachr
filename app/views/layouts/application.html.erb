@@ -2,6 +2,7 @@
 <html>
 <head>
   <title>Clarity</title>
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/slideout/0.1.11/slideout.min.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
@@ -10,20 +11,7 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <% if coach_logged_in? %>
-  <header>
-    <a href="<%= coach_path(current_coach) %>"><img class="header-logo" src="/imgs/clarity-logo.png"></a>
-    <%= link_to("Log Out", logout_path) %>
-    <%= link_to("Create New Client", new_client_path) %>
-  </header>
-  <% end %>
 
-  <% if client_logged_in? %>
-  <header>
-    <%= link_to("Home", client_path) %>
-    <%= link_to("Log Out", logout_path) %>
-  </header>
-  <% end %>
   <%= yield %>
 
 </body>

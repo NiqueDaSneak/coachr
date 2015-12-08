@@ -1,0 +1,80 @@
+.panel-header{
+  background-color: #0062B3;
+  height: 78px;
+  margin: 0px;
+  box-shadow: 0px 1px 6px 0px rgba(0,0,0,0.75);
+  margin-bottom: 20px;
+}
+
+#menu {
+  box-shadow: inset 0px 1px 6px 0px rgba(0,0,0,0.75);
+  background-color: #003663;
+}
+
+.menu-header {
+  padding: 1px;
+  color: white;
+  text-align: center;
+  font-size: 18pt;
+}
+
+.menu-img {
+  width: 65px;
+  display: block;
+  margin: 0 auto;
+}
+
+.menu-link-text:link {
+  text-decoration: none;
+  color: #0062B3;
+}
+
+.menu-link-text:visited {
+  color: #0062B3;
+}
+
+.menu-link-text:active {
+  text-decoration: underline;
+}
+
+.menu-link-text:hover {
+  color: white;
+}
+
+.menu-buttons-container {
+  text-align: center;
+}
+
+.menu-button {
+  margin-top: 50px;
+}
+
+.toggle-button {
+  outline: 0;
+  background: none;
+  border: 0;
+  font-size: 30px;
+  color: white;
+  margin: 14px;
+}
+
+.coach-name {
+  color: white;
+  font-size: 20px;
+  padding-left: 45px;
+}
+
+.client-link {
+  background-color: #003663;
+  color: white;
+  margin-bottom: 15px;
+  padding: 25px
+}
+
+.client-link-a {
+  text-decoration: none;
+}
+
+.double-chevron {
+  float: right;
+}

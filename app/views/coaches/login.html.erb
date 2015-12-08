@@ -1,7 +1,15 @@
-<p>Log In Below:</p>
-<p> <%= flash[:error]%> </p>
+<img class="login-logo" src="/imgs/clarity-logo.png">
 
+<p> <%= flash[:error]%> </p>
+<div class="input-holder">
 <%= form_tag('/coaches/find') %>
-  <%= text_field_tag 'email', nil, placeholder: "Email:" %>
-  <%= password_field_tag 'password', nil, placeholder: "Password:"%>
-  <%= submit_tag %>
+  <div>
+  <%= text_field_tag 'email', nil, placeholder: "Email:", :required => true, :class => "input-fields" %>
+  </div>
+  <div>
+  <%= password_field_tag 'password', nil, placeholder: "Password:", :required => true, :class => "input-fields"%>
+  </div>
+  <div>
+  <%= submit_tag "Log In", :class => "submit-button" %>
+  </div>
+</div>

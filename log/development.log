@@ -6967,3 +6967,404 @@ Started GET "/client/login" for ::1 at 2015-12-07 23:14:15 -0500
 Processing by ClientsController#login as HTML
   Rendered clients/login.html.erb within layouts/application (0.7ms)
 Completed 200 OK in 60ms (Views: 58.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/coach/login" for ::1 at 2015-12-07 23:15:14 -0500
+Processing by CoachesController#login as HTML
+  Rendered coaches/login.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 83ms (Views: 81.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/coaches/find" for ::1 at 2015-12-07 23:15:47 -0500
+Processing by CoachesController#find as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"WsvqbH9Yg/7XBuZQXf8t3BYftDw2n4g1aGEiyLA+qEX929zQ/Eo/Bym7YBiP7zFsHS4abiZjDVMUbElLyQ1CaQ==", "email"=>"ramon@dbc.com", "password"=>"[FILTERED]", "commit"=>"Log In"}
+  [1m[35mCoach Load (171.2ms)[0m  SELECT  "coaches".* FROM "coaches" WHERE "coaches"."email" = $1 LIMIT 1  [["email", "ramon@dbc.com"]]
+Redirected to http://localhost:3000/coaches/1
+Completed 302 Found in 507ms (ActiveRecord: 171.5ms)
+
+
+Started GET "/coaches/1" for ::1 at 2015-12-07 23:15:48 -0500
+Processing by CoachesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCoach Load (20.3ms)[0m  [1mSELECT  "coaches".* FROM "coaches" WHERE "coaches"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mClient Load (21.0ms)[0m  SELECT "clients".* FROM "clients" WHERE "clients"."coach_id" = $1  [["coach_id", 1]]
+  Rendered coaches/show.html.erb within layouts/application (170.7ms)
+  [1m[36mCoach Load (0.4ms)[0m  [1mSELECT  "coaches".* FROM "coaches" WHERE "coaches"."id" = $1 LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 285ms (Views: 215.9ms | ActiveRecord: 43.6ms)
+
+
+Started GET "/coaches/1" for ::1 at 2015-12-07 23:18:44 -0500
+Processing by CoachesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mCoach Load (0.3ms)[0m  SELECT  "coaches".* FROM "coaches" WHERE "coaches"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mClient Load (0.4ms)[0m  [1mSELECT "clients".* FROM "clients" WHERE "clients"."coach_id" = $1[0m  [["coach_id", 1]]
+  Rendered coaches/show.html.erb within layouts/application (2.1ms)
+  [1m[35mCoach Load (0.4ms)[0m  SELECT  "coaches".* FROM "coaches" WHERE "coaches"."id" = $1 LIMIT 1  [["id", 1]]
+Completed 200 OK in 65ms (Views: 62.5ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/assets/welcome-index.self-26210b7111867ea756629a382ade4c50cb4bda4a97c2ba60400f4ec289b787d1.css?body=1" for ::1 at 2015-12-07 23:18:45 -0500
+
+
+Started GET "/assets/layout.self-a41a44c03252ee7ee0c9862df5f7c08c530f3da295920b013cd9b17f2148bf4f.css?body=1" for ::1 at 2015-12-07 23:18:45 -0500
+
+
+Started GET "/assets/signup-login.self-2a4c3632a60b3e0198982b537e055b5097f430dd46204c75a116ceda6ff2c769.css?body=1" for ::1 at 2015-12-07 23:18:45 -0500
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-12-07 23:18:45 -0500
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-12-07 23:18:45 -0500
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-12-07 23:18:45 -0500
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-12-07 23:18:45 -0500
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-12-07 23:18:45 -0500
+
+
+Started GET "/coaches/1" for ::1 at 2015-12-07 23:19:45 -0500
+Processing by CoachesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCoach Load (0.5ms)[0m  [1mSELECT  "coaches".* FROM "coaches" WHERE "coaches"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mClient Load (0.5ms)[0m  SELECT "clients".* FROM "clients" WHERE "clients"."coach_id" = $1  [["coach_id", 1]]
+  Rendered coaches/show.html.erb within layouts/application (3.1ms)
+  [1m[36mCoach Load (0.4ms)[0m  [1mSELECT  "coaches".* FROM "coaches" WHERE "coaches"."id" = $1 LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 133ms (Views: 130.0ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/assets/layout.self-8205a0e62d96eca0e4376128f3cdaee5a0c60fcc9e5df0081967c290cf94f24b.css?body=1" for ::1 at 2015-12-07 23:19:45 -0500
+
+
+Started GET "/assets/signup-login.self-2a4c3632a60b3e0198982b537e055b5097f430dd46204c75a116ceda6ff2c769.css?body=1" for ::1 at 2015-12-07 23:19:45 -0500
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-12-07 23:19:45 -0500
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-12-07 23:19:45 -0500
+
+
+Started GET "/assets/welcome-index.self-26210b7111867ea756629a382ade4c50cb4bda4a97c2ba60400f4ec289b787d1.css?body=1" for ::1 at 2015-12-07 23:19:45 -0500
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-12-07 23:19:45 -0500
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-12-07 23:19:45 -0500
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-12-07 23:19:45 -0500
+
+
+Started GET "/coaches/1" for ::1 at 2015-12-07 23:19:51 -0500
+Processing by CoachesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mCoach Load (0.2ms)[0m  SELECT  "coaches".* FROM "coaches" WHERE "coaches"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mClient Load (1.2ms)[0m  [1mSELECT "clients".* FROM "clients" WHERE "clients"."coach_id" = $1[0m  [["coach_id", 1]]
+  Rendered coaches/show.html.erb within layouts/application (2.9ms)
+  [1m[35mCoach Load (0.3ms)[0m  SELECT  "coaches".* FROM "coaches" WHERE "coaches"."id" = $1 LIMIT 1  [["id", 1]]
+Completed 200 OK in 103ms (Views: 100.4ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/assets/layout.self-cde21f971bc758c34831fac51fec25fe3a1c2acb5438f66cd2368d6dae292305.css?body=1" for ::1 at 2015-12-07 23:19:51 -0500
+
+
+Started GET "/assets/signup-login.self-2a4c3632a60b3e0198982b537e055b5097f430dd46204c75a116ceda6ff2c769.css?body=1" for ::1 at 2015-12-07 23:19:51 -0500
+
+
+Started GET "/assets/welcome-index.self-26210b7111867ea756629a382ade4c50cb4bda4a97c2ba60400f4ec289b787d1.css?body=1" for ::1 at 2015-12-07 23:19:51 -0500
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-12-07 23:19:51 -0500
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-12-07 23:19:51 -0500
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-12-07 23:19:51 -0500
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-12-07 23:19:51 -0500
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-12-07 23:19:51 -0500
+
+
+Started GET "/coaches/1" for ::1 at 2015-12-07 23:20:04 -0500
+Processing by CoachesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCoach Load (0.2ms)[0m  [1mSELECT  "coaches".* FROM "coaches" WHERE "coaches"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mClient Load (0.3ms)[0m  SELECT "clients".* FROM "clients" WHERE "clients"."coach_id" = $1  [["coach_id", 1]]
+  Rendered coaches/show.html.erb within layouts/application (2.0ms)
+  [1m[36mCoach Load (0.3ms)[0m  [1mSELECT  "coaches".* FROM "coaches" WHERE "coaches"."id" = $1 LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 87ms (Views: 84.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/signup-login.self-2a4c3632a60b3e0198982b537e055b5097f430dd46204c75a116ceda6ff2c769.css?body=1" for ::1 at 2015-12-07 23:20:04 -0500
+
+
+Started GET "/assets/layout.self-f8c1713612059ed13a5d7d54ca16335bc34c6bd35d36823d11840e4e892accba.css?body=1" for ::1 at 2015-12-07 23:20:04 -0500
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-12-07 23:20:04 -0500
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-12-07 23:20:04 -0500
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-12-07 23:20:04 -0500
+
+
+Started GET "/assets/welcome-index.self-26210b7111867ea756629a382ade4c50cb4bda4a97c2ba60400f4ec289b787d1.css?body=1" for ::1 at 2015-12-07 23:20:04 -0500
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-12-07 23:20:04 -0500
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-12-07 23:20:04 -0500
+
+
+Started GET "/coaches/1" for ::1 at 2015-12-07 23:20:22 -0500
+Processing by CoachesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mCoach Load (0.3ms)[0m  SELECT  "coaches".* FROM "coaches" WHERE "coaches"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mClient Load (0.3ms)[0m  [1mSELECT "clients".* FROM "clients" WHERE "clients"."coach_id" = $1[0m  [["coach_id", 1]]
+  Rendered coaches/show.html.erb within layouts/application (2.3ms)
+  [1m[35mCoach Load (0.3ms)[0m  SELECT  "coaches".* FROM "coaches" WHERE "coaches"."id" = $1 LIMIT 1  [["id", 1]]
+Completed 200 OK in 501ms (Views: 498.4ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/layout.self-cde21f971bc758c34831fac51fec25fe3a1c2acb5438f66cd2368d6dae292305.css?body=1" for ::1 at 2015-12-07 23:20:23 -0500
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-12-07 23:20:23 -0500
+
+
+Started GET "/assets/signup-login.self-2a4c3632a60b3e0198982b537e055b5097f430dd46204c75a116ceda6ff2c769.css?body=1" for ::1 at 2015-12-07 23:20:23 -0500
+
+
+Started GET "/assets/welcome-index.self-26210b7111867ea756629a382ade4c50cb4bda4a97c2ba60400f4ec289b787d1.css?body=1" for ::1 at 2015-12-07 23:20:23 -0500
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-12-07 23:20:23 -0500
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-12-07 23:20:23 -0500
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-12-07 23:20:23 -0500
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-12-07 23:20:23 -0500
+
+
+Started GET "/coaches/1" for ::1 at 2015-12-07 23:20:37 -0500
+Processing by CoachesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCoach Load (2.6ms)[0m  [1mSELECT  "coaches".* FROM "coaches" WHERE "coaches"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mClient Load (0.3ms)[0m  SELECT "clients".* FROM "clients" WHERE "clients"."coach_id" = $1  [["coach_id", 1]]
+  Rendered coaches/show.html.erb within layouts/application (2.4ms)
+  [1m[36mCoach Load (0.3ms)[0m  [1mSELECT  "coaches".* FROM "coaches" WHERE "coaches"."id" = $1 LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 110ms (Views: 104.8ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/assets/signup-login.self-2a4c3632a60b3e0198982b537e055b5097f430dd46204c75a116ceda6ff2c769.css?body=1" for ::1 at 2015-12-07 23:20:38 -0500
+
+
+Started GET "/assets/welcome-index.self-26210b7111867ea756629a382ade4c50cb4bda4a97c2ba60400f4ec289b787d1.css?body=1" for ::1 at 2015-12-07 23:20:38 -0500
+
+
+Started GET "/assets/layout.self-d58b31dce3f59f83ea2dd09f4714aa39c662f15e9b13a25da00b51a8e9a76f79.css?body=1" for ::1 at 2015-12-07 23:20:38 -0500
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-12-07 23:20:38 -0500
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-12-07 23:20:38 -0500
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-12-07 23:20:38 -0500
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-12-07 23:20:38 -0500
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-12-07 23:20:38 -0500
+
+
+Started GET "/coaches/1" for ::1 at 2015-12-07 23:20:52 -0500
+Processing by CoachesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mCoach Load (0.2ms)[0m  SELECT  "coaches".* FROM "coaches" WHERE "coaches"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mClient Load (0.2ms)[0m  [1mSELECT "clients".* FROM "clients" WHERE "clients"."coach_id" = $1[0m  [["coach_id", 1]]
+  Rendered coaches/show.html.erb within layouts/application (1.9ms)
+  [1m[35mCoach Load (0.3ms)[0m  SELECT  "coaches".* FROM "coaches" WHERE "coaches"."id" = $1 LIMIT 1  [["id", 1]]
+Completed 200 OK in 92ms (Views: 90.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/signup-login.self-2a4c3632a60b3e0198982b537e055b5097f430dd46204c75a116ceda6ff2c769.css?body=1" for ::1 at 2015-12-07 23:20:52 -0500
+
+
+Started GET "/assets/welcome-index.self-26210b7111867ea756629a382ade4c50cb4bda4a97c2ba60400f4ec289b787d1.css?body=1" for ::1 at 2015-12-07 23:20:52 -0500
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-12-07 23:20:52 -0500
+
+
+Started GET "/assets/layout.self-77967851cc6d7a0f9e70317b7a292424c18c20474f7cbd1bd096f789abc1ca06.css?body=1" for ::1 at 2015-12-07 23:20:52 -0500
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-12-07 23:20:52 -0500
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-12-07 23:20:52 -0500
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-12-07 23:20:52 -0500
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-12-07 23:20:52 -0500
+
+
+Started GET "/coaches/1" for ::1 at 2015-12-07 23:21:04 -0500
+Processing by CoachesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCoach Load (0.2ms)[0m  [1mSELECT  "coaches".* FROM "coaches" WHERE "coaches"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mClient Load (0.2ms)[0m  SELECT "clients".* FROM "clients" WHERE "clients"."coach_id" = $1  [["coach_id", 1]]
+  Rendered coaches/show.html.erb within layouts/application (2.1ms)
+  [1m[36mCoach Load (0.3ms)[0m  [1mSELECT  "coaches".* FROM "coaches" WHERE "coaches"."id" = $1 LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 90ms (Views: 87.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/signup-login.self-2a4c3632a60b3e0198982b537e055b5097f430dd46204c75a116ceda6ff2c769.css?body=1" for ::1 at 2015-12-07 23:21:04 -0500
+
+
+Started GET "/assets/layout.self-ea6ccd2867fc787cf045df99ecda37689e8ba7eee837087a76c4cbcb1ea94d85.css?body=1" for ::1 at 2015-12-07 23:21:04 -0500
+
+
+Started GET "/assets/welcome-index.self-26210b7111867ea756629a382ade4c50cb4bda4a97c2ba60400f4ec289b787d1.css?body=1" for ::1 at 2015-12-07 23:21:04 -0500
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-12-07 23:21:04 -0500
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-12-07 23:21:04 -0500
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-12-07 23:21:04 -0500
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-12-07 23:21:04 -0500
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-12-07 23:21:04 -0500
+
+
+Started GET "/coaches/1" for ::1 at 2015-12-07 23:21:11 -0500
+Processing by CoachesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mCoach Load (0.4ms)[0m  SELECT  "coaches".* FROM "coaches" WHERE "coaches"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mClient Load (0.6ms)[0m  [1mSELECT "clients".* FROM "clients" WHERE "clients"."coach_id" = $1[0m  [["coach_id", 1]]
+  Rendered coaches/show.html.erb within layouts/application (3.6ms)
+  [1m[35mCoach Load (0.3ms)[0m  SELECT  "coaches".* FROM "coaches" WHERE "coaches"."id" = $1 LIMIT 1  [["id", 1]]
+Completed 200 OK in 110ms (Views: 106.8ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/assets/signup-login.self-2a4c3632a60b3e0198982b537e055b5097f430dd46204c75a116ceda6ff2c769.css?body=1" for ::1 at 2015-12-07 23:21:11 -0500
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-12-07 23:21:11 -0500
+
+
+Started GET "/assets/welcome-index.self-26210b7111867ea756629a382ade4c50cb4bda4a97c2ba60400f4ec289b787d1.css?body=1" for ::1 at 2015-12-07 23:21:11 -0500
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-12-07 23:21:11 -0500
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-12-07 23:21:11 -0500
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-12-07 23:21:11 -0500
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-12-07 23:21:11 -0500
+
+
+Started GET "/assets/layout.self-71942c309e597004e1c2cbc95f623c52ef7fb54df17d3e2a0a844a7d7d80d06b.css?body=1" for ::1 at 2015-12-07 23:21:11 -0500
+
+
+Started GET "/coaches/1" for ::1 at 2015-12-07 23:21:24 -0500
+Processing by CoachesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCoach Load (0.3ms)[0m  [1mSELECT  "coaches".* FROM "coaches" WHERE "coaches"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mClient Load (0.2ms)[0m  SELECT "clients".* FROM "clients" WHERE "clients"."coach_id" = $1  [["coach_id", 1]]
+  Rendered coaches/show.html.erb within layouts/application (2.2ms)
+  [1m[36mCoach Load (0.3ms)[0m  [1mSELECT  "coaches".* FROM "coaches" WHERE "coaches"."id" = $1 LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 93ms (Views: 90.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/layout.self-7f4bc894a42d504035fd015a3830f6ee42eef8e158d89947effab9565e1e4367.css?body=1" for ::1 at 2015-12-07 23:21:24 -0500
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-12-07 23:21:24 -0500
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-12-07 23:21:24 -0500
+
+
+Started GET "/assets/signup-login.self-2a4c3632a60b3e0198982b537e055b5097f430dd46204c75a116ceda6ff2c769.css?body=1" for ::1 at 2015-12-07 23:21:24 -0500
+
+
+Started GET "/assets/welcome-index.self-26210b7111867ea756629a382ade4c50cb4bda4a97c2ba60400f4ec289b787d1.css?body=1" for ::1 at 2015-12-07 23:21:24 -0500
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-12-07 23:21:24 -0500
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-12-07 23:21:24 -0500
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-12-07 23:21:24 -0500
+
+
+Started GET "/coaches/1" for ::1 at 2015-12-07 23:31:10 -0500
+Processing by CoachesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mCoach Load (58.4ms)[0m  SELECT  "coaches".* FROM "coaches" WHERE "coaches"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mClient Load (1.0ms)[0m  [1mSELECT "clients".* FROM "clients" WHERE "clients"."coach_id" = $1[0m  [["coach_id", 1]]
+  Rendered coaches/show.html.erb within layouts/application (28.6ms)
+  [1m[35mCoach Load (0.4ms)[0m  SELECT  "coaches".* FROM "coaches" WHERE "coaches"."id" = $1 LIMIT 1  [["id", 1]]
+Completed 200 OK in 558ms (Views: 431.9ms | ActiveRecord: 59.7ms)
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-12-07 23:31:11 -0500
+
+
+Started GET "/assets/welcome-index.self-26210b7111867ea756629a382ade4c50cb4bda4a97c2ba60400f4ec289b787d1.css?body=1" for ::1 at 2015-12-07 23:31:11 -0500
+
+
+Started GET "/assets/layout.self-7f4bc894a42d504035fd015a3830f6ee42eef8e158d89947effab9565e1e4367.css?body=1" for ::1 at 2015-12-07 23:31:12 -0500
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-12-07 23:31:12 -0500
+
+
+Started GET "/assets/signup-login.self-2a4c3632a60b3e0198982b537e055b5097f430dd46204c75a116ceda6ff2c769.css?body=1" for ::1 at 2015-12-07 23:31:12 -0500
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-12-07 23:31:12 -0500
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-12-07 23:31:12 -0500
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-12-07 23:31:12 -0500
+
+
+Started GET "/assets/layout.self-7f4bc894a42d504035fd015a3830f6ee42eef8e158d89947effab9565e1e4367.css?body=1" for ::1 at 2015-12-07 23:31:13 -0500

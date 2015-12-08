@@ -1,10 +1,22 @@
-<p>Please fill out the form below to create a profile:</p>
-<p> <%= flash[:error] %></p>
+<img class="login-logo" src="/imgs/clarity-logo.png">
 
-<%= form_for @coach do |f| %>
-  <%= f.text_field :full_name, :placeholder => "Full Name:", :required => true %>
-  <%= f.text_field :company_name, :placeholder => "Company Name:", :required => true %>
-  <%= f.text_field :email, :placeholder => "Email:", :required => true %>
-  <%= f.password_field :password, :placeholder => "Password:", :required => true %>
-  <%= f.submit %>
+<p> <%= flash[:error] %></p>
+<div class="input-holder">
+  <%= form_for @coach do |f| %>
+  <div>
+    <%= f.text_field :full_name, :placeholder => "Full Name", :required => true, :class => "input-fields" %>
+  </div>
+  <div>
+    <%= f.text_field :company_name, :placeholder => "Company Name", :required => true, :class => "input-fields" %>
+  </div>
+  <div>
+    <%= f.text_field :email, :placeholder => "Email", :required => true, :class => "input-fields" %>
+  </div>
+  <div>
+    <%= f.password_field :password, :placeholder => "Password", :required => true, :class => "input-fields" %>
+  </div>
+  <div>
+    <%= f.submit "Sign Up", :class => "submit-button" %>
+  </div>
+</div>
 <% end %>

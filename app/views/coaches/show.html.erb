@@ -26,16 +26,18 @@
 
     <section id="panel">
       <header class="panel-header">
-        <button class="toggle-button">☰</button>
-        <span class="coach-name"> <%= @coach.full_name %> </span>
+        <img class="toggle-button" src="/imgs/menu.png">
+        <div class="center-name-coach">
+        <span class="center-name"> <%= @coach.full_name %></span>
+  </div>
       </header>
 
       <% @coach.clients.each do |client| %>
       <a class="client-link-a" href="<%= client_path(client) %>">
-      <div class="client-link">
-        <%= client.full_name %>
-        <img class="double-chevron" src="/imgs/double-chevron.png">
-      </div>
+        <div class="client-link">
+          <%= client.full_name %>
+          <img class="double-chevron" src="/imgs/double-chevron.png">
+        </div>
       </a>
       <% end %>
     </section>

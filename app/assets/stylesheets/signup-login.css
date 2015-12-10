@@ -1,9 +1,24 @@
 .login-logo {
-  height: 15%;
+  height: 80px;
   display: block;
   margin: 0 auto;
-  margin-top: 150px;
+  margin-top: 100px;
   margin-bottom: 30px;
+}
+
+.signup-button {
+  display: block;
+  box-shadow: 0px 4px 10px 0px rgba(0,0,0,0.75);
+  text-align: center;
+  font-size: 10pt;
+  background-color: #0062B3;
+  border-radius: 6px;
+  color: white;
+  width: 140px;
+  margin-right: 6px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  text-decoration: none;
 }
 
 .input-holder {

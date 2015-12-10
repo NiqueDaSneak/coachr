@@ -1,9 +1,10 @@
 .panel-header{
   background-color: #0062B3;
   height: 78px;
-  margin: 0px;
   box-shadow: 0px 1px 6px 0px rgba(0,0,0,0.75);
   margin-bottom: 20px;
+  font-size: 18px;
+  color: white;
 }
 
 #menu {
@@ -50,18 +51,10 @@
 }
 
 .toggle-button {
-  outline: 0;
-  background: none;
-  border: 0;
-  font-size: 30px;
-  color: white;
-  margin: 14px;
-}
-
-.coach-name {
-  color: white;
-  font-size: 20px;
-  padding-left: 45px;
+  color: red;
+  padding-left: 25px;
+  padding-right: 35px;
+  padding-top: 25px;
 }
 
 .client-link {
@@ -77,4 +70,9 @@
 
 .double-chevron {
   float: right;
+}
+
+.center-name-coach {
+  text-align: center;
+  padding-bottom: 30px;
 }

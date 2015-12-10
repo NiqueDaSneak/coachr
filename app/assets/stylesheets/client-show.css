@@ -1,0 +1,37 @@
+.back-button {
+  color: red;
+  padding-left: 25px;
+  /*padding-right: 35px;*/
+  padding-top: 25px;
+  display: inline;
+}
+
+.client-header{
+  background-color: #0062B3;
+  height: 78px;
+  box-shadow: 0px 1px 6px 0px rgba(0,0,0,0.75);
+  margin-bottom: 20px;
+  font-size: 18px;
+  color: white;
+  vertical-align: middle;
+}
+
+.center-name-client {
+  text-align: center;
+}
+
+.add-goal{
+  display: block;
+  margin: 0 auto;
+  padding: 4px;
+  border:1px solid #021a40;
+  margin-bottom: 10px;
+}
+
+
+.goal {
+  color: white;
+  text-align: center;
+  background-color: #003663;
+  padding: 5px;
+}

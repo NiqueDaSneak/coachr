@@ -1,0 +1,21 @@
+.input-area {
+background: transparent;
+  color: white;
+  width: 300px;
+  height: 125px;
+  text-align: center;
+  margin-bottom: 20px;
+  border: solid;
+  border-color: white;
+  border-radius: 6px;
+}
+
+.new-goal-container {
+  text-align: center;
+}
+
+.new-goal-text {
+    color: white;
+  text-align: center;
+  padding-top: 30px;
+}

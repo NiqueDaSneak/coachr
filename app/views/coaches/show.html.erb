@@ -4,12 +4,6 @@
       </header>
       <div class="menu-buttons-container">
         <div class="menu-button">
-          <a class="menu-link-text" href="<%= coaches_path(current_coach) %>">
-            <img class="menu-img" src="/imgs/home_link.png">
-            <p>Home</p>
-          </a>
-        </div>
-        <div class="menu-button">
           <a class="menu-link-text" href="<%= new_client_path %>">
             <img class="menu-img" src="/imgs/add_link.png">
             <p>Add Client</p>
@@ -25,12 +19,10 @@
     </nav>
 
     <section id="panel">
-      <header class="panel-header">
         <img class="toggle-button" src="/imgs/menu.png">
         <div class="center-name-coach">
         <span class="center-name"> <%= @coach.full_name %></span>
   </div>
-      </header>
 
       <% @coach.clients.each do |client| %>
       <a class="client-link-a" href="<%= client_path(client) %>">

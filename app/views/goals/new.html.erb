@@ -1,9 +1,15 @@
-<p>Fill out the form to create a new goal:</p>
-
+<img class="back-button" src="/imgs/back.png" onclick="history.go(-1);">
+<p class="new-goal-text">Fill out the form to create a new goal:</p>
+<div class="new-goal-container">
 <%= form_for @goal do |f| %>
-<%= f.text_field :statement, :placeholder => "What is the goal?" %>
-<%= f.text_area :notes, :placeholder => "Section for notes:" %>
+<div>
+  <%= f.text_field :statement, :placeholder => "What is the goal?", :class => "input-fields" %>
+</div>
+<div>
+  <%= f.text_area :notes, :placeholder => "Notes (Optional):", :class => "input-area" %>
+</div>
 <%= f.hidden_field :client_id, :value => @client_id %>
 <%= f.hidden_field :completed, :value => false %>
-<%= f.submit%>
-  <% end %>
+<%= f.submit "Create Goal", :class => "submit-button" %>
+<% end %>
+</div>

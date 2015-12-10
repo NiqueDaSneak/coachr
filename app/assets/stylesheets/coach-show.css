@@ -1,11 +1,10 @@
-.panel-header{
+/*.panel-header{
   background-color: #0062B3;
   height: 78px;
   box-shadow: 0px 1px 6px 0px rgba(0,0,0,0.75);
   margin-bottom: 20px;
   font-size: 18px;
-  color: white;
-}
+}*/
 
 #menu {
   box-shadow: inset 0px 1px 6px 0px rgba(0,0,0,0.75);
@@ -13,10 +12,11 @@
 }
 
 .menu-header {
-  padding: 1px;
+  padding: 0px;
   color: white;
   text-align: center;
   font-size: 18pt;
+  margin-bottom: 20px;
 }
 
 .menu-img {
@@ -73,6 +73,8 @@
 }
 
 .center-name-coach {
+  padding-top: 30px;
   text-align: center;
+  color: white;
   padding-bottom: 30px;
 }

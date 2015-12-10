@@ -17,7 +17,10 @@
 }
 
 .center-name-client {
+padding-top: 30px;
   text-align: center;
+  color: white;
+  padding-bottom: 30px;
 }
 
 .add-goal{

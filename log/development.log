@@ -23682,3 +23682,8 @@ Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0
 Processing by CoachesController#new as HTML
   Rendered coaches/new.html.erb within layouts/application (2.3ms)
 Completed 200 OK in 100ms (Views: 98.8ms | ActiveRecord: 0.0ms)
+  [1m[36mClient Load (69.2ms)[0m  [1mSELECT  "clients".* FROM "clients"  ORDER BY "clients"."id" DESC LIMIT 1[0m
+  [1m[35mClient Load (0.9ms)[0m  SELECT  "clients".* FROM "clients"  ORDER BY "clients"."id" DESC LIMIT 1
+  [1m[36mCoach Load (0.7ms)[0m  [1mSELECT  "coaches".* FROM "coaches" WHERE "coaches"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mClient Load (0.8ms)[0m  SELECT  "clients".* FROM "clients"  ORDER BY "clients"."id" DESC LIMIT 1
+  [1m[36mCoach Load (0.4ms)[0m  [1mSELECT  "coaches".* FROM "coaches" WHERE "coaches"."id" = $1 LIMIT 1[0m  [["id", 1]]

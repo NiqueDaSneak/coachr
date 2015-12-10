@@ -1,15 +1,13 @@
-<header class="client-header">
-  <img class="back-button" src="/imgs/back.png" onclick="history.go(-1);">
-  <div class="center-name-client">
-        <span class="center-name-client"> <%= @client.full_name %>'s Goals </span>
-  </div>
-</header>
+<%= link_to image_tag("/imgs/back.png", :class => "back-button"), coach_path(@client.coach.id) %>
+<div class="center-name-client">
+  <span class="center-name-client"> <%= @client.full_name %>'s Goals </span>
+</div>
 <a href= "<%= new_goal_path( :'data-client-id' => @client.id ) %>">
-<img class="add-goal" src="/imgs/plus.png">
+  <img class="add-goal" src="/imgs/plus.png">
 </a>
 
 <% @client.goals.each do |goal| %>
 <div class="goal">
   <p> <%= goal.statement %> </p>
 </div>
-  <% end %>
+<% end %>

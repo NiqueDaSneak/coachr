@@ -1,10 +1,17 @@
-<p>Enter your clients email and give them access to their profile:</p>
+<img class="back-button" src="/imgs/back.png" onclick="history.go(-1);">
+<p class="new-client-text">Enter your clients email and give them access to their profile:</p>
 <p> <%= flash[:error] %></p>
 
-<%= form_for @client do |f| %>
-  <%= f.text_field :full_name, :placeholder => "Client's Full Name", :required => true %>
-  <%= f.text_field :email, :placeholder => "Client's Email:", :required => true %>
+<div class="new-client-container">
+  <%= form_for @client do |f| %>
+  <div>
+    <%= f.text_field :full_name, :placeholder => "Client's Full Name", :required => true, :class => "input-fields" %>
+  </div>
+  <div>
+    <%= f.text_field :email, :placeholder => "Client's Email:", :required => true, :class => "input-fields" %>
+  </div>
   <%= f.hidden_field :coach_id, :value => current_coach.id %>
   <%= f.hidden_field :password, :value => $temp_pass  %>
-  <%= f.submit %>
+  <%= f.submit "Create Client", :class => "submit-button"%>
   <% end %>
+</div>

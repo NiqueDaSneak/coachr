@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   resources :coaches
   get 'coach/login' => 'coaches#login'
   post 'coaches/find' => 'coaches#find'
-  get 'coach/new' => 'coaches#new'
+
 
   resources :clients
   get 'client/login' => 'clients#login'

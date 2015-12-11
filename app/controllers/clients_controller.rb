@@ -19,7 +19,7 @@ class ClientsController < ApplicationController
   end
 
   def find
-    @client = Client.find_by(email: params[:email])
+    @client = Client.find_by(email: params[:email].downcase)
       if @client && @client.authenticate(params[:password])
         session[:client_id] = @client.id
         if @client.first_login == true

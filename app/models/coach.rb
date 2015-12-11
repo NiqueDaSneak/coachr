@@ -6,9 +6,7 @@ class Coach < ActiveRecord::Base
   validates :full_name, presence: true, uniqueness: true
   validates :email, email: true, uniqueness: true
 
-
   has_secure_password
-
 
   def check_params
     self.email.downcase

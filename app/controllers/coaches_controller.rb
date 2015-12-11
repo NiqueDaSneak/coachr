@@ -23,7 +23,7 @@ class CoachesController < ApplicationController
 
 
   def find
-    @coach = Coach.find_by(email: params[:email])
+    @coach = Coach.find_by(email: params[:email].downcase)
     if @coach && @coach.authenticate(params[:password])
       session[:coach_id] = @coach.id
       redirect_to coach_path(@coach)

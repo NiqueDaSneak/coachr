@@ -4,77 +4,82 @@
   box-shadow: 0px 1px 6px 0px rgba(0,0,0,0.75);
   margin-bottom: 20px;
   font-size: 18px;
-}*/
+  }*/
 
-#menu {
-  box-shadow: inset 0px 1px 6px 0px rgba(0,0,0,0.75);
-  background-color: #003663;
-}
+  #menu {
+    box-shadow: inset 0px 1px 6px 0px rgba(0,0,0,0.75);
+    background-color: #003663;
+  }
 
-.menu-header {
-  padding: 0px;
-  color: white;
-  text-align: center;
-  font-size: 18pt;
-  margin-bottom: 20px;
-}
+  .menu-header {
+    padding: 0px;
+    color: white;
+    text-align: center;
+    font-size: 18pt;
+    margin-bottom: 20px;
+  }
 
-.menu-img {
-  width: 65px;
-  display: block;
-  margin: 0 auto;
-}
+  .menu-img {
+    width: 65px;
+    display: block;
+    margin: 0 auto;
+  }
 
-.menu-link-text:link {
-  text-decoration: none;
-  color: #0062B3;
-}
+  .menu-link-text:link {
+    text-decoration: none;
+    color: #0062B3;
+  }
 
-.menu-link-text:visited {
-  color: #0062B3;
-}
+  .menu-link-text:visited {
+    color: #0062B3;
+  }
 
-.menu-link-text:active {
-  text-decoration: underline;
-}
+  .menu-link-text:active {
+    text-decoration: underline;
+  }
 
-.menu-link-text:hover {
-  color: white;
-}
+  .menu-link-text:hover {
+    color: white;
+  }
 
-.menu-buttons-container {
-  text-align: center;
-}
+  .menu-buttons-container {
+    text-align: center;
+  }
 
-.menu-button {
-  margin-top: 50px;
-}
+  .menu-button {
+    margin-top: 50px;
+  }
 
-.toggle-button {
-  color: red;
-  padding-left: 25px;
-  padding-right: 35px;
-  padding-top: 25px;
-}
+  .toggle-button {
+    color: red;
+    padding-left: 25px;
+    padding-right: 35px;
+    padding-top: 25px;
+  }
 
-.client-link {
-  background-color: #003663;
-  color: white;
-  margin-bottom: 15px;
-  padding: 25px
-}
+  .client-link {
+    background-color: #003663;
+    color: white;
+    margin-bottom: 15px;
+    padding: 25px
+  }
 
-.client-link-a {
-  text-decoration: none;
-}
+  .client-link-a {
+    text-decoration: none;
+  }
 
-.double-chevron {
-  float: right;
-}
+  .double-chevron {
+    float: right;
+  }
 
-.center-name-coach {
-  padding-top: 30px;
-  text-align: center;
-  color: white;
-  padding-bottom: 30px;
-}
+  .center-name-coach {
+    padding-top: 30px;
+    text-align: center;
+    color: white;
+    padding-bottom: 30px;
+    text-shadow: 0px 2px black;
+    font-size: 25px;
+  }
+
+  .coach-name {
+  }

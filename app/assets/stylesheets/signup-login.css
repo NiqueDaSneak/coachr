@@ -62,5 +62,9 @@
   padding-top: 8px;
   padding-bottom: 8px;
   font-family: 'Montserrat', sans-serif;
+}
 
+.login-signup-errors {
+  text-align: center;
+  color: red;
 }

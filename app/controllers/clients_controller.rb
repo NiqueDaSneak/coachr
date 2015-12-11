@@ -7,7 +7,6 @@ class ClientsController < ApplicationController
 
   def create
     @client = Client.create(client_params)
-    binding.pry
     if @client.save
       ClientMailer.welcome_email(@client).deliver_now
       redirect_to client_path(@client)

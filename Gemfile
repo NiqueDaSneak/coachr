@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+# Database
+gem 'pg'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5'
 # Sending emails to clients from coach
@@ -36,7 +38,6 @@ gem 'bcrypt', '~> 3.1.7'
 
 group :development, :test do
   gem 'pry'
-  gem 'pg'
 end
 
 group :development do
@@ -49,6 +50,5 @@ end
 
 # For Heroku
 group :production do
-  gem 'pg'
   gem 'rails_12factor'
 end

@@ -23687,3 +23687,1173 @@ Completed 200 OK in 100ms (Views: 98.8ms | ActiveRecord: 0.0ms)
   [1m[36mCoach Load (0.7ms)[0m  [1mSELECT  "coaches".* FROM "coaches" WHERE "coaches"."id" = $1 LIMIT 1[0m  [["id", 1]]
   [1m[35mClient Load (0.8ms)[0m  SELECT  "clients".* FROM "clients"  ORDER BY "clients"."id" DESC LIMIT 1
   [1m[36mCoach Load (0.4ms)[0m  [1mSELECT  "coaches".* FROM "coaches" WHERE "coaches"."id" = $1 LIMIT 1[0m  [["id", 1]]
+
+
+Started GET "/" for 192.168.1.76 at 2015-12-11 10:44:09 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (57.9ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 4565ms (Views: 4522.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/coach/login" for 192.168.1.76 at 2015-12-11 10:44:27 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CoachesController#login as HTML
+  Rendered coaches/login.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 441ms (Views: 439.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/coaches/find" for 192.168.1.76 at 2015-12-11 10:44:39 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CoachesController#find as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"cHgFGe0zlxcsZ4cCchgQM0IO1FJ+aFEoXGnKgo/QbKWSh6H8oc6QoRdx0lInABA0xEsqEO1dbRabqGEN42BUxg==", "email"=>"ramon@dbc.com", "password"=>"[FILTERED]", "commit"=>"Log In"}
+  [1m[35mCoach Load (184.1ms)[0m  SELECT  "coaches".* FROM "coaches" WHERE "coaches"."email" = $1 LIMIT 1  [["email", "ramon@dbc.com"]]
+Redirected to http://192.168.1.82:3000/coach/login
+Completed 302 Found in 888ms (ActiveRecord: 430.9ms)
+
+
+Started GET "/coach/login" for 192.168.1.76 at 2015-12-11 10:44:40 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CoachesController#login as HTML
+  Rendered coaches/login.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 480ms (Views: 457.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/coach/login" for 192.168.1.76 at 2015-12-11 10:46:55 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CoachesController#login as HTML
+  Rendered coaches/login.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 910ms (Views: 909.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/coach-show.self-4b007a6a7c1b70f81c1965c41a57a72ea03b00a9c69b6966c69c916ac689aa20.css?body=1" for 192.168.1.76 at 2015-12-11 10:46:57 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/client-new.self-0b7940e079c99b2cd5f5c42b6e1d61b81cf319138c8d59352ab8857c003c6b55.css?body=1" for 192.168.1.76 at 2015-12-11 10:46:57 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/layout.self-d6b60e0257a9dd0d9cfd6a41b531a0a6b6118da2ea9da67dbb84d0854676b30e.css?body=1" for 192.168.1.76 at 2015-12-11 10:46:57 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/signup-login.self-f219f632d2fa58d2f7f812f3cf835fce070bf4169bab079cf15b23bebe388b64.css?body=1" for 192.168.1.76 at 2015-12-11 10:46:57 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/client-show.self-e5d58d7e0363c9bfe3c19b3547fc6403a7cb0ebc62e5fbd961f138b696b1825f.css?body=1" for 192.168.1.76 at 2015-12-11 10:46:57 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/new-goal.self-744ccc501188b0ff332603a50519e145cc171ced0fcb21aaa617e6e72af1a159.css?body=1" for 192.168.1.76 at 2015-12-11 10:46:57 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/welcome-index.self-46498a2731122ee131308bf92f94f36070df1f7558a2ec75fff04365772b55b2.css?body=1" for 192.168.1.76 at 2015-12-11 10:46:57 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for 192.168.1.76 at 2015-12-11 10:46:57 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/slideout.self-875e0eadc8828f0f28dd7ac4ae3c2eada99aace86b8804f768a7e00ff4900da2.css?body=1" for 192.168.1.76 at 2015-12-11 10:46:57 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 192.168.1.76 at 2015-12-11 10:46:57 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 192.168.1.76 at 2015-12-11 10:46:57 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for 192.168.1.76 at 2015-12-11 10:46:57 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 192.168.1.76 at 2015-12-11 10:46:57 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started POST "/coaches/find" for 192.168.1.76 at 2015-12-11 10:47:04 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CoachesController#find as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ayRT4WOORC8NCB0Bepc0rIg065wZba3JSzT/uZrrI+mJ2/cEL3NDmTYeSFEvjzSrDnEV3opYkfeM9VQ29lsbig==", "email"=>"ramon@dbc.com", "password"=>"[FILTERED]", "commit"=>"Log In"}
+  [1m[36mCoach Load (0.5ms)[0m  [1mSELECT  "coaches".* FROM "coaches" WHERE "coaches"."email" = $1 LIMIT 1[0m  [["email", "ramon@dbc.com"]]
+Redirected to http://192.168.1.82:3000/coach/login
+Completed 302 Found in 91ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/coach/login" for 192.168.1.76 at 2015-12-11 10:47:04 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CoachesController#login as HTML
+  Rendered coaches/login.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 121ms (Views: 120.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/coach/login" for 192.168.1.76 at 2015-12-11 10:47:09 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CoachesController#login as HTML
+  Rendered coaches/login.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 379ms (Views: 378.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/client-new.self-0b7940e079c99b2cd5f5c42b6e1d61b81cf319138c8d59352ab8857c003c6b55.css?body=1" for 192.168.1.76 at 2015-12-11 10:47:10 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/signup-login.self-bf689712172dcbc7bf781f1e6c30e313b0713cde125b112890a0244b41f77feb.css?body=1" for 192.168.1.76 at 2015-12-11 10:47:10 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/client-show.self-e5d58d7e0363c9bfe3c19b3547fc6403a7cb0ebc62e5fbd961f138b696b1825f.css?body=1" for 192.168.1.76 at 2015-12-11 10:47:10 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/slideout.self-875e0eadc8828f0f28dd7ac4ae3c2eada99aace86b8804f768a7e00ff4900da2.css?body=1" for 192.168.1.76 at 2015-12-11 10:47:10 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/coach-show.self-4b007a6a7c1b70f81c1965c41a57a72ea03b00a9c69b6966c69c916ac689aa20.css?body=1" for 192.168.1.76 at 2015-12-11 10:47:10 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/layout.self-d6b60e0257a9dd0d9cfd6a41b531a0a6b6118da2ea9da67dbb84d0854676b30e.css?body=1" for 192.168.1.76 at 2015-12-11 10:47:10 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/new-goal.self-744ccc501188b0ff332603a50519e145cc171ced0fcb21aaa617e6e72af1a159.css?body=1" for 192.168.1.76 at 2015-12-11 10:47:10 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 192.168.1.76 at 2015-12-11 10:47:10 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/welcome-index.self-46498a2731122ee131308bf92f94f36070df1f7558a2ec75fff04365772b55b2.css?body=1" for 192.168.1.76 at 2015-12-11 10:47:10 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for 192.168.1.76 at 2015-12-11 10:47:10 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for 192.168.1.76 at 2015-12-11 10:47:10 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 192.168.1.76 at 2015-12-11 10:47:10 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 192.168.1.76 at 2015-12-11 10:47:10 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started POST "/coaches/find" for 192.168.1.76 at 2015-12-11 10:47:17 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CoachesController#find as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ByK3c/q8IrWhCWhSMCgcwQMGUslm1JLsfC+HYwC79svl3ROWtkElA5ofPQJlMBzGhUOsi/XhrtK77izsbAvOqA==", "email"=>"Hdhf", "password"=>"[FILTERED]", "commit"=>"Log In"}
+  [1m[35mCoach Load (0.4ms)[0m  SELECT  "coaches".* FROM "coaches" WHERE "coaches"."email" = $1 LIMIT 1  [["email", "Hdhf"]]
+Redirected to http://192.168.1.82:3000/coach/login
+Completed 302 Found in 2ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/coach/login" for 192.168.1.76 at 2015-12-11 10:47:17 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CoachesController#login as HTML
+  Rendered coaches/login.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 72ms (Views: 71.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/coach/login" for 192.168.1.76 at 2015-12-11 10:47:29 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CoachesController#login as HTML
+  Rendered coaches/login.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 133ms (Views: 132.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/signup-login.self-9a22339d67f17284997bc601bf39a6fa4758bc45cd004b3b46ced848efc803cd.css?body=1" for 192.168.1.76 at 2015-12-11 10:47:29 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/coach-show.self-4b007a6a7c1b70f81c1965c41a57a72ea03b00a9c69b6966c69c916ac689aa20.css?body=1" for 192.168.1.76 at 2015-12-11 10:47:29 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/client-show.self-e5d58d7e0363c9bfe3c19b3547fc6403a7cb0ebc62e5fbd961f138b696b1825f.css?body=1" for 192.168.1.76 at 2015-12-11 10:47:29 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/client-new.self-0b7940e079c99b2cd5f5c42b6e1d61b81cf319138c8d59352ab8857c003c6b55.css?body=1" for 192.168.1.76 at 2015-12-11 10:47:29 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/new-goal.self-744ccc501188b0ff332603a50519e145cc171ced0fcb21aaa617e6e72af1a159.css?body=1" for 192.168.1.76 at 2015-12-11 10:47:29 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/layout.self-d6b60e0257a9dd0d9cfd6a41b531a0a6b6118da2ea9da67dbb84d0854676b30e.css?body=1" for 192.168.1.76 at 2015-12-11 10:47:29 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/welcome-index.self-46498a2731122ee131308bf92f94f36070df1f7558a2ec75fff04365772b55b2.css?body=1" for 192.168.1.76 at 2015-12-11 10:47:29 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/slideout.self-875e0eadc8828f0f28dd7ac4ae3c2eada99aace86b8804f768a7e00ff4900da2.css?body=1" for 192.168.1.76 at 2015-12-11 10:47:29 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 192.168.1.76 at 2015-12-11 10:47:29 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for 192.168.1.76 at 2015-12-11 10:47:29 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for 192.168.1.76 at 2015-12-11 10:47:29 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 192.168.1.76 at 2015-12-11 10:47:29 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 192.168.1.76 at 2015-12-11 10:47:29 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started POST "/coaches/find" for 192.168.1.76 at 2015-12-11 10:47:35 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CoachesController#find as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"lqc2x7lm32B+il9NbsgJ9pxxDUoJtvZ7fgHJXvAbvtl0WJIi9ZvY1kWcCh070AnxGjTzCJqDykW5wGLRnKuGug==", "email"=>"3848", "password"=>"[FILTERED]", "commit"=>"Log In"}
+  [1m[36mCoach Load (0.4ms)[0m  [1mSELECT  "coaches".* FROM "coaches" WHERE "coaches"."email" = $1 LIMIT 1[0m  [["email", "3848"]]
+Redirected to http://192.168.1.82:3000/coach/login
+Completed 302 Found in 2ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/coach/login" for 192.168.1.76 at 2015-12-11 10:47:35 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CoachesController#login as HTML
+  Rendered coaches/login.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 65ms (Views: 64.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/coaches/find" for 192.168.1.76 at 2015-12-11 10:48:15 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CoachesController#find as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Rn0netekhKUEpRlbB10AP1olI2eT6k28JSYUORh1/D2kgoOfm1mDEz+zTAtSRQA43GDdJQDfcYLi57+2dMXEXg==", "email"=>"ramon@dbc.com", "password"=>"[FILTERED]", "commit"=>"Log In"}
+  [1m[35mCoach Load (0.3ms)[0m  SELECT  "coaches".* FROM "coaches" WHERE "coaches"."email" = $1 LIMIT 1  [["email", "ramon@dbc.com"]]
+Redirected to http://192.168.1.82:3000/coaches/1
+Completed 302 Found in 90ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/coaches/1" for 192.168.1.76 at 2015-12-11 10:48:15 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CoachesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCoach Load (27.5ms)[0m  [1mSELECT  "coaches".* FROM "coaches" WHERE "coaches"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mClient Load (27.8ms)[0m  SELECT "clients".* FROM "clients" WHERE "clients"."coach_id" = $1  [["coach_id", 1]]
+  Rendered coaches/show.html.erb within layouts/application (355.5ms)
+Completed 200 OK in 483ms (Views: 422.0ms | ActiveRecord: 57.4ms)
+
+
+Started GET "/coaches/1" for 192.168.1.76 at 2015-12-11 10:51:03 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CoachesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCoach Load (0.4ms)[0m  [1mSELECT  "coaches".* FROM "coaches" WHERE "coaches"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mClient Load (0.4ms)[0m  SELECT "clients".* FROM "clients" WHERE "clients"."coach_id" = $1  [["coach_id", 1]]
+  Rendered coaches/show.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 1759ms (Views: 1756.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/coach-show.self-6e7872160976f62c93780e47d3f6a6704c41e0cc4d256f96cd71dd3bd43942cc.css?body=1" for 192.168.1.76 at 2015-12-11 10:51:05 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/client-new.self-0b7940e079c99b2cd5f5c42b6e1d61b81cf319138c8d59352ab8857c003c6b55.css?body=1" for 192.168.1.76 at 2015-12-11 10:51:05 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/client-show.self-e5d58d7e0363c9bfe3c19b3547fc6403a7cb0ebc62e5fbd961f138b696b1825f.css?body=1" for 192.168.1.76 at 2015-12-11 10:51:05 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/new-goal.self-744ccc501188b0ff332603a50519e145cc171ced0fcb21aaa617e6e72af1a159.css?body=1" for 192.168.1.76 at 2015-12-11 10:51:05 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/slideout.self-875e0eadc8828f0f28dd7ac4ae3c2eada99aace86b8804f768a7e00ff4900da2.css?body=1" for 192.168.1.76 at 2015-12-11 10:51:05 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/welcome-index.self-46498a2731122ee131308bf92f94f36070df1f7558a2ec75fff04365772b55b2.css?body=1" for 192.168.1.76 at 2015-12-11 10:51:05 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/layout.self-d6b60e0257a9dd0d9cfd6a41b531a0a6b6118da2ea9da67dbb84d0854676b30e.css?body=1" for 192.168.1.76 at 2015-12-11 10:51:05 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 192.168.1.76 at 2015-12-11 10:51:05 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/signup-login.self-9a22339d67f17284997bc601bf39a6fa4758bc45cd004b3b46ced848efc803cd.css?body=1" for 192.168.1.76 at 2015-12-11 10:51:05 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 192.168.1.76 at 2015-12-11 10:51:05 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for 192.168.1.76 at 2015-12-11 10:51:05 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 192.168.1.76 at 2015-12-11 10:51:05 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for 192.168.1.76 at 2015-12-11 10:51:05 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/coaches/1" for 192.168.1.76 at 2015-12-11 10:51:29 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CoachesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCoach Load (0.4ms)[0m  [1mSELECT  "coaches".* FROM "coaches" WHERE "coaches"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mClient Load (0.3ms)[0m  SELECT "clients".* FROM "clients" WHERE "clients"."coach_id" = $1  [["coach_id", 1]]
+  Rendered coaches/show.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 69ms (Views: 66.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/client-new.self-0b7940e079c99b2cd5f5c42b6e1d61b81cf319138c8d59352ab8857c003c6b55.css?body=1" for 192.168.1.76 at 2015-12-11 10:51:29 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/client-show.self-e5d58d7e0363c9bfe3c19b3547fc6403a7cb0ebc62e5fbd961f138b696b1825f.css?body=1" for 192.168.1.76 at 2015-12-11 10:51:29 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/new-goal.self-744ccc501188b0ff332603a50519e145cc171ced0fcb21aaa617e6e72af1a159.css?body=1" for 192.168.1.76 at 2015-12-11 10:51:29 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/slideout.self-875e0eadc8828f0f28dd7ac4ae3c2eada99aace86b8804f768a7e00ff4900da2.css?body=1" for 192.168.1.76 at 2015-12-11 10:51:29 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/coach-show.self-6e7872160976f62c93780e47d3f6a6704c41e0cc4d256f96cd71dd3bd43942cc.css?body=1" for 192.168.1.76 at 2015-12-11 10:51:29 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/layout.self-d6b60e0257a9dd0d9cfd6a41b531a0a6b6118da2ea9da67dbb84d0854676b30e.css?body=1" for 192.168.1.76 at 2015-12-11 10:51:29 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/signup-login.self-9a22339d67f17284997bc601bf39a6fa4758bc45cd004b3b46ced848efc803cd.css?body=1" for 192.168.1.76 at 2015-12-11 10:51:29 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/welcome-index.self-46498a2731122ee131308bf92f94f36070df1f7558a2ec75fff04365772b55b2.css?body=1" for 192.168.1.76 at 2015-12-11 10:51:29 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for 192.168.1.76 at 2015-12-11 10:51:29 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 192.168.1.76 at 2015-12-11 10:51:29 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for 192.168.1.76 at 2015-12-11 10:51:29 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 192.168.1.76 at 2015-12-11 10:51:29 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 192.168.1.76 at 2015-12-11 10:51:29 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/coaches/1" for 192.168.1.76 at 2015-12-11 10:51:55 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CoachesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCoach Load (0.4ms)[0m  [1mSELECT  "coaches".* FROM "coaches" WHERE "coaches"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mClient Load (0.3ms)[0m  SELECT "clients".* FROM "clients" WHERE "clients"."coach_id" = $1  [["coach_id", 1]]
+  Rendered coaches/show.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 77ms (Views: 75.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/client-new.self-0b7940e079c99b2cd5f5c42b6e1d61b81cf319138c8d59352ab8857c003c6b55.css?body=1" for 192.168.1.76 at 2015-12-11 10:51:55 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/client-show.self-e5d58d7e0363c9bfe3c19b3547fc6403a7cb0ebc62e5fbd961f138b696b1825f.css?body=1" for 192.168.1.76 at 2015-12-11 10:51:55 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/signup-login.self-9a22339d67f17284997bc601bf39a6fa4758bc45cd004b3b46ced848efc803cd.css?body=1" for 192.168.1.76 at 2015-12-11 10:51:55 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/layout.self-d6b60e0257a9dd0d9cfd6a41b531a0a6b6118da2ea9da67dbb84d0854676b30e.css?body=1" for 192.168.1.76 at 2015-12-11 10:51:55 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/coach-show.self-6e7872160976f62c93780e47d3f6a6704c41e0cc4d256f96cd71dd3bd43942cc.css?body=1" for 192.168.1.76 at 2015-12-11 10:51:55 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/new-goal.self-744ccc501188b0ff332603a50519e145cc171ced0fcb21aaa617e6e72af1a159.css?body=1" for 192.168.1.76 at 2015-12-11 10:51:55 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 192.168.1.76 at 2015-12-11 10:51:55 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/welcome-index.self-46498a2731122ee131308bf92f94f36070df1f7558a2ec75fff04365772b55b2.css?body=1" for 192.168.1.76 at 2015-12-11 10:51:55 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/slideout.self-875e0eadc8828f0f28dd7ac4ae3c2eada99aace86b8804f768a7e00ff4900da2.css?body=1" for 192.168.1.76 at 2015-12-11 10:51:55 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for 192.168.1.76 at 2015-12-11 10:51:55 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 192.168.1.76 at 2015-12-11 10:51:55 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for 192.168.1.76 at 2015-12-11 10:51:55 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 192.168.1.76 at 2015-12-11 10:51:55 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/coaches/1" for 192.168.1.76 at 2015-12-11 10:52:14 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CoachesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCoach Load (0.3ms)[0m  [1mSELECT  "coaches".* FROM "coaches" WHERE "coaches"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mClient Load (0.3ms)[0m  SELECT "clients".* FROM "clients" WHERE "clients"."coach_id" = $1  [["coach_id", 1]]
+  Rendered coaches/show.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 77ms (Views: 74.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/client-new.self-0b7940e079c99b2cd5f5c42b6e1d61b81cf319138c8d59352ab8857c003c6b55.css?body=1" for 192.168.1.76 at 2015-12-11 10:52:14 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/coach-show.self-6e7872160976f62c93780e47d3f6a6704c41e0cc4d256f96cd71dd3bd43942cc.css?body=1" for 192.168.1.76 at 2015-12-11 10:52:14 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for 192.168.1.76 at 2015-12-11 10:52:14 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/layout.self-d6b60e0257a9dd0d9cfd6a41b531a0a6b6118da2ea9da67dbb84d0854676b30e.css?body=1" for 192.168.1.76 at 2015-12-11 10:52:14 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/client-show.self-e5d58d7e0363c9bfe3c19b3547fc6403a7cb0ebc62e5fbd961f138b696b1825f.css?body=1" for 192.168.1.76 at 2015-12-11 10:52:14 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/signup-login.self-9a22339d67f17284997bc601bf39a6fa4758bc45cd004b3b46ced848efc803cd.css?body=1" for 192.168.1.76 at 2015-12-11 10:52:14 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/slideout.self-875e0eadc8828f0f28dd7ac4ae3c2eada99aace86b8804f768a7e00ff4900da2.css?body=1" for 192.168.1.76 at 2015-12-11 10:52:14 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/welcome-index.self-46498a2731122ee131308bf92f94f36070df1f7558a2ec75fff04365772b55b2.css?body=1" for 192.168.1.76 at 2015-12-11 10:52:14 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 192.168.1.76 at 2015-12-11 10:52:14 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/new-goal.self-744ccc501188b0ff332603a50519e145cc171ced0fcb21aaa617e6e72af1a159.css?body=1" for 192.168.1.76 at 2015-12-11 10:52:14 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for 192.168.1.76 at 2015-12-11 10:52:14 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 192.168.1.76 at 2015-12-11 10:52:14 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 192.168.1.76 at 2015-12-11 10:52:14 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/coaches/1" for 192.168.1.76 at 2015-12-11 10:52:17 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CoachesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCoach Load (0.4ms)[0m  [1mSELECT  "coaches".* FROM "coaches" WHERE "coaches"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mClient Load (0.3ms)[0m  SELECT "clients".* FROM "clients" WHERE "clients"."coach_id" = $1  [["coach_id", 1]]
+  Rendered coaches/show.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 87ms (Views: 85.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/client-new.self-0b7940e079c99b2cd5f5c42b6e1d61b81cf319138c8d59352ab8857c003c6b55.css?body=1" for 192.168.1.76 at 2015-12-11 10:52:17 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/client-show.self-e5d58d7e0363c9bfe3c19b3547fc6403a7cb0ebc62e5fbd961f138b696b1825f.css?body=1" for 192.168.1.76 at 2015-12-11 10:52:17 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/coach-show.self-6e7872160976f62c93780e47d3f6a6704c41e0cc4d256f96cd71dd3bd43942cc.css?body=1" for 192.168.1.76 at 2015-12-11 10:52:17 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/welcome-index.self-46498a2731122ee131308bf92f94f36070df1f7558a2ec75fff04365772b55b2.css?body=1" for 192.168.1.76 at 2015-12-11 10:52:17 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/layout.self-d6b60e0257a9dd0d9cfd6a41b531a0a6b6118da2ea9da67dbb84d0854676b30e.css?body=1" for 192.168.1.76 at 2015-12-11 10:52:17 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/new-goal.self-744ccc501188b0ff332603a50519e145cc171ced0fcb21aaa617e6e72af1a159.css?body=1" for 192.168.1.76 at 2015-12-11 10:52:17 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/signup-login.self-9a22339d67f17284997bc601bf39a6fa4758bc45cd004b3b46ced848efc803cd.css?body=1" for 192.168.1.76 at 2015-12-11 10:52:17 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 192.168.1.76 at 2015-12-11 10:52:17 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/slideout.self-875e0eadc8828f0f28dd7ac4ae3c2eada99aace86b8804f768a7e00ff4900da2.css?body=1" for 192.168.1.76 at 2015-12-11 10:52:17 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for 192.168.1.76 at 2015-12-11 10:52:17 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for 192.168.1.76 at 2015-12-11 10:52:17 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 192.168.1.76 at 2015-12-11 10:52:18 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 192.168.1.76 at 2015-12-11 10:52:18 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/coaches/1" for 192.168.1.76 at 2015-12-11 10:53:32 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CoachesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCoach Load (0.3ms)[0m  [1mSELECT  "coaches".* FROM "coaches" WHERE "coaches"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mClient Load (0.2ms)[0m  SELECT "clients".* FROM "clients" WHERE "clients"."coach_id" = $1  [["coach_id", 1]]
+  Rendered coaches/show.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 160ms (Views: 158.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/coach-show.self-d5c2314645f4e9175d907f8c126e85b5ba2e96b20878187fde1dda17f1a5ce04.css?body=1" for 192.168.1.76 at 2015-12-11 10:53:33 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/layout.self-d6b60e0257a9dd0d9cfd6a41b531a0a6b6118da2ea9da67dbb84d0854676b30e.css?body=1" for 192.168.1.76 at 2015-12-11 10:53:33 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/slideout.self-875e0eadc8828f0f28dd7ac4ae3c2eada99aace86b8804f768a7e00ff4900da2.css?body=1" for 192.168.1.76 at 2015-12-11 10:53:33 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/client-new.self-0b7940e079c99b2cd5f5c42b6e1d61b81cf319138c8d59352ab8857c003c6b55.css?body=1" for 192.168.1.76 at 2015-12-11 10:53:33 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/client-show.self-e5d58d7e0363c9bfe3c19b3547fc6403a7cb0ebc62e5fbd961f138b696b1825f.css?body=1" for 192.168.1.76 at 2015-12-11 10:53:33 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/new-goal.self-744ccc501188b0ff332603a50519e145cc171ced0fcb21aaa617e6e72af1a159.css?body=1" for 192.168.1.76 at 2015-12-11 10:53:33 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/signup-login.self-9a22339d67f17284997bc601bf39a6fa4758bc45cd004b3b46ced848efc803cd.css?body=1" for 192.168.1.76 at 2015-12-11 10:53:33 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/welcome-index.self-46498a2731122ee131308bf92f94f36070df1f7558a2ec75fff04365772b55b2.css?body=1" for 192.168.1.76 at 2015-12-11 10:53:33 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 192.168.1.76 at 2015-12-11 10:53:33 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for 192.168.1.76 at 2015-12-11 10:53:33 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 192.168.1.76 at 2015-12-11 10:53:33 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for 192.168.1.76 at 2015-12-11 10:53:33 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 192.168.1.76 at 2015-12-11 10:53:33 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/coaches/1" for 192.168.1.76 at 2015-12-11 10:53:40 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CoachesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCoach Load (0.3ms)[0m  [1mSELECT  "coaches".* FROM "coaches" WHERE "coaches"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mClient Load (0.2ms)[0m  SELECT "clients".* FROM "clients" WHERE "clients"."coach_id" = $1  [["coach_id", 1]]
+  Rendered coaches/show.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 85ms (Views: 83.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/client-new.self-0b7940e079c99b2cd5f5c42b6e1d61b81cf319138c8d59352ab8857c003c6b55.css?body=1" for 192.168.1.76 at 2015-12-11 10:53:41 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/coach-show.self-d5c2314645f4e9175d907f8c126e85b5ba2e96b20878187fde1dda17f1a5ce04.css?body=1" for 192.168.1.76 at 2015-12-11 10:53:41 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/client-show.self-e5d58d7e0363c9bfe3c19b3547fc6403a7cb0ebc62e5fbd961f138b696b1825f.css?body=1" for 192.168.1.76 at 2015-12-11 10:53:41 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/layout.self-d6b60e0257a9dd0d9cfd6a41b531a0a6b6118da2ea9da67dbb84d0854676b30e.css?body=1" for 192.168.1.76 at 2015-12-11 10:53:41 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/new-goal.self-744ccc501188b0ff332603a50519e145cc171ced0fcb21aaa617e6e72af1a159.css?body=1" for 192.168.1.76 at 2015-12-11 10:53:41 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/signup-login.self-9a22339d67f17284997bc601bf39a6fa4758bc45cd004b3b46ced848efc803cd.css?body=1" for 192.168.1.76 at 2015-12-11 10:53:41 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 192.168.1.76 at 2015-12-11 10:53:41 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/welcome-index.self-46498a2731122ee131308bf92f94f36070df1f7558a2ec75fff04365772b55b2.css?body=1" for 192.168.1.76 at 2015-12-11 10:53:41 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/slideout.self-875e0eadc8828f0f28dd7ac4ae3c2eada99aace86b8804f768a7e00ff4900da2.css?body=1" for 192.168.1.76 at 2015-12-11 10:53:41 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for 192.168.1.76 at 2015-12-11 10:53:41 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for 192.168.1.76 at 2015-12-11 10:53:41 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 192.168.1.76 at 2015-12-11 10:53:41 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 192.168.1.76 at 2015-12-11 10:53:41 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/coaches/1" for 192.168.1.76 at 2015-12-11 10:53:44 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CoachesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCoach Load (0.3ms)[0m  [1mSELECT  "coaches".* FROM "coaches" WHERE "coaches"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mClient Load (0.2ms)[0m  SELECT "clients".* FROM "clients" WHERE "clients"."coach_id" = $1  [["coach_id", 1]]
+  Rendered coaches/show.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 126ms (Views: 124.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/coach-show.self-ea5bb5f6c87cc10e751cc03d6f8d3722cb98aa73c4198776c3c9f1f6822729f4.css?body=1" for 192.168.1.76 at 2015-12-11 10:53:44 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/client-new.self-0b7940e079c99b2cd5f5c42b6e1d61b81cf319138c8d59352ab8857c003c6b55.css?body=1" for 192.168.1.76 at 2015-12-11 10:53:44 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/signup-login.self-9a22339d67f17284997bc601bf39a6fa4758bc45cd004b3b46ced848efc803cd.css?body=1" for 192.168.1.76 at 2015-12-11 10:53:44 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/new-goal.self-744ccc501188b0ff332603a50519e145cc171ced0fcb21aaa617e6e72af1a159.css?body=1" for 192.168.1.76 at 2015-12-11 10:53:44 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/client-show.self-e5d58d7e0363c9bfe3c19b3547fc6403a7cb0ebc62e5fbd961f138b696b1825f.css?body=1" for 192.168.1.76 at 2015-12-11 10:53:44 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/layout.self-d6b60e0257a9dd0d9cfd6a41b531a0a6b6118da2ea9da67dbb84d0854676b30e.css?body=1" for 192.168.1.76 at 2015-12-11 10:53:44 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/slideout.self-875e0eadc8828f0f28dd7ac4ae3c2eada99aace86b8804f768a7e00ff4900da2.css?body=1" for 192.168.1.76 at 2015-12-11 10:53:44 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/welcome-index.self-46498a2731122ee131308bf92f94f36070df1f7558a2ec75fff04365772b55b2.css?body=1" for 192.168.1.76 at 2015-12-11 10:53:44 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 192.168.1.76 at 2015-12-11 10:53:44 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for 192.168.1.76 at 2015-12-11 10:53:44 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for 192.168.1.76 at 2015-12-11 10:53:44 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 192.168.1.76 at 2015-12-11 10:53:44 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 192.168.1.76 at 2015-12-11 10:53:44 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/coaches/1" for 192.168.1.76 at 2015-12-11 10:53:55 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CoachesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCoach Load (0.3ms)[0m  [1mSELECT  "coaches".* FROM "coaches" WHERE "coaches"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mClient Load (0.3ms)[0m  SELECT "clients".* FROM "clients" WHERE "clients"."coach_id" = $1  [["coach_id", 1]]
+  Rendered coaches/show.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 73ms (Views: 71.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/coach-show.self-ea5bb5f6c87cc10e751cc03d6f8d3722cb98aa73c4198776c3c9f1f6822729f4.css?body=1" for 192.168.1.76 at 2015-12-11 10:53:55 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/client-new.self-0b7940e079c99b2cd5f5c42b6e1d61b81cf319138c8d59352ab8857c003c6b55.css?body=1" for 192.168.1.76 at 2015-12-11 10:53:55 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/slideout.self-875e0eadc8828f0f28dd7ac4ae3c2eada99aace86b8804f768a7e00ff4900da2.css?body=1" for 192.168.1.76 at 2015-12-11 10:53:55 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/layout.self-d6b60e0257a9dd0d9cfd6a41b531a0a6b6118da2ea9da67dbb84d0854676b30e.css?body=1" for 192.168.1.76 at 2015-12-11 10:53:55 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/new-goal.self-744ccc501188b0ff332603a50519e145cc171ced0fcb21aaa617e6e72af1a159.css?body=1" for 192.168.1.76 at 2015-12-11 10:53:55 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/signup-login.self-9a22339d67f17284997bc601bf39a6fa4758bc45cd004b3b46ced848efc803cd.css?body=1" for 192.168.1.76 at 2015-12-11 10:53:55 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/client-show.self-e5d58d7e0363c9bfe3c19b3547fc6403a7cb0ebc62e5fbd961f138b696b1825f.css?body=1" for 192.168.1.76 at 2015-12-11 10:53:55 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/welcome-index.self-46498a2731122ee131308bf92f94f36070df1f7558a2ec75fff04365772b55b2.css?body=1" for 192.168.1.76 at 2015-12-11 10:53:55 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 192.168.1.76 at 2015-12-11 10:53:55 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for 192.168.1.76 at 2015-12-11 10:53:55 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for 192.168.1.76 at 2015-12-11 10:53:55 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 192.168.1.76 at 2015-12-11 10:53:55 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 192.168.1.76 at 2015-12-11 10:53:55 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/coaches/1" for 192.168.1.76 at 2015-12-11 10:54:07 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CoachesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCoach Load (0.3ms)[0m  [1mSELECT  "coaches".* FROM "coaches" WHERE "coaches"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mClient Load (0.2ms)[0m  SELECT "clients".* FROM "clients" WHERE "clients"."coach_id" = $1  [["coach_id", 1]]
+  Rendered coaches/show.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 71ms (Views: 68.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/client-show.self-e5d58d7e0363c9bfe3c19b3547fc6403a7cb0ebc62e5fbd961f138b696b1825f.css?body=1" for 192.168.1.76 at 2015-12-11 10:54:07 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/layout.self-d6b60e0257a9dd0d9cfd6a41b531a0a6b6118da2ea9da67dbb84d0854676b30e.css?body=1" for 192.168.1.76 at 2015-12-11 10:54:07 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/coach-show.self-ea5bb5f6c87cc10e751cc03d6f8d3722cb98aa73c4198776c3c9f1f6822729f4.css?body=1" for 192.168.1.76 at 2015-12-11 10:54:07 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 192.168.1.76 at 2015-12-11 10:54:07 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/welcome-index.self-46498a2731122ee131308bf92f94f36070df1f7558a2ec75fff04365772b55b2.css?body=1" for 192.168.1.76 at 2015-12-11 10:54:07 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/signup-login.self-9a22339d67f17284997bc601bf39a6fa4758bc45cd004b3b46ced848efc803cd.css?body=1" for 192.168.1.76 at 2015-12-11 10:54:07 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/client-new.self-0b7940e079c99b2cd5f5c42b6e1d61b81cf319138c8d59352ab8857c003c6b55.css?body=1" for 192.168.1.76 at 2015-12-11 10:54:07 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/slideout.self-875e0eadc8828f0f28dd7ac4ae3c2eada99aace86b8804f768a7e00ff4900da2.css?body=1" for 192.168.1.76 at 2015-12-11 10:54:07 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/new-goal.self-744ccc501188b0ff332603a50519e145cc171ced0fcb21aaa617e6e72af1a159.css?body=1" for 192.168.1.76 at 2015-12-11 10:54:07 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for 192.168.1.76 at 2015-12-11 10:54:07 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for 192.168.1.76 at 2015-12-11 10:54:07 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 192.168.1.76 at 2015-12-11 10:54:07 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 192.168.1.76 at 2015-12-11 10:54:07 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/coaches/1" for 192.168.1.76 at 2015-12-11 10:54:10 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CoachesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCoach Load (0.3ms)[0m  [1mSELECT  "coaches".* FROM "coaches" WHERE "coaches"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mClient Load (0.2ms)[0m  SELECT "clients".* FROM "clients" WHERE "clients"."coach_id" = $1  [["coach_id", 1]]
+  Rendered coaches/show.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 114ms (Views: 111.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/coach-show.self-ba3d43d6062a7831134a0d4cea015a684f43263ed8bde4db93f1752aa499143a.css?body=1" for 192.168.1.76 at 2015-12-11 10:54:11 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/client-new.self-0b7940e079c99b2cd5f5c42b6e1d61b81cf319138c8d59352ab8857c003c6b55.css?body=1" for 192.168.1.76 at 2015-12-11 10:54:11 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/new-goal.self-744ccc501188b0ff332603a50519e145cc171ced0fcb21aaa617e6e72af1a159.css?body=1" for 192.168.1.76 at 2015-12-11 10:54:11 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/signup-login.self-9a22339d67f17284997bc601bf39a6fa4758bc45cd004b3b46ced848efc803cd.css?body=1" for 192.168.1.76 at 2015-12-11 10:54:11 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/client-show.self-e5d58d7e0363c9bfe3c19b3547fc6403a7cb0ebc62e5fbd961f138b696b1825f.css?body=1" for 192.168.1.76 at 2015-12-11 10:54:11 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/layout.self-d6b60e0257a9dd0d9cfd6a41b531a0a6b6118da2ea9da67dbb84d0854676b30e.css?body=1" for 192.168.1.76 at 2015-12-11 10:54:11 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/slideout.self-875e0eadc8828f0f28dd7ac4ae3c2eada99aace86b8804f768a7e00ff4900da2.css?body=1" for 192.168.1.76 at 2015-12-11 10:54:11 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 192.168.1.76 at 2015-12-11 10:54:11 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for 192.168.1.76 at 2015-12-11 10:54:11 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/welcome-index.self-46498a2731122ee131308bf92f94f36070df1f7558a2ec75fff04365772b55b2.css?body=1" for 192.168.1.76 at 2015-12-11 10:54:11 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for 192.168.1.76 at 2015-12-11 10:54:11 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 192.168.1.76 at 2015-12-11 10:54:11 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 192.168.1.76 at 2015-12-11 10:54:11 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/clients/1" for 192.168.1.76 at 2015-12-11 10:54:24 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ClientsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mClient Load (23.8ms)[0m  [1mSELECT  "clients".* FROM "clients" WHERE "clients"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCoach Load (0.3ms)[0m  SELECT  "coaches".* FROM "coaches" WHERE "coaches"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mGoal Load (1.3ms)[0m  [1mSELECT "goals".* FROM "goals" WHERE "goals"."client_id" = $1[0m  [["client_id", 1]]
+  Rendered clients/show.html.erb within layouts/application (73.7ms)
+Completed 200 OK in 189ms (Views: 135.6ms | ActiveRecord: 50.0ms)
+
+
+Started GET "/coaches/1" for 192.168.1.76 at 2015-12-11 10:54:30 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CoachesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mCoach Load (0.3ms)[0m  SELECT  "coaches".* FROM "coaches" WHERE "coaches"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mClient Load (0.3ms)[0m  [1mSELECT "clients".* FROM "clients" WHERE "clients"."coach_id" = $1[0m  [["coach_id", 1]]
+  Rendered coaches/show.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 75ms (Views: 73.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/coaches/1" for 192.168.1.76 at 2015-12-11 10:55:09 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CoachesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mCoach Load (0.2ms)[0m  SELECT  "coaches".* FROM "coaches" WHERE "coaches"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mClient Load (0.2ms)[0m  [1mSELECT "clients".* FROM "clients" WHERE "clients"."coach_id" = $1[0m  [["coach_id", 1]]
+  Rendered coaches/show.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 122ms (Views: 120.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/client-show.self-52499a4cbbaa1c8e2d8a8588b548e20154df0a2280914ec7439b56c37c20fe64.css?body=1" for 192.168.1.76 at 2015-12-11 10:55:10 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/layout.self-d6b60e0257a9dd0d9cfd6a41b531a0a6b6118da2ea9da67dbb84d0854676b30e.css?body=1" for 192.168.1.76 at 2015-12-11 10:55:10 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/new-goal.self-744ccc501188b0ff332603a50519e145cc171ced0fcb21aaa617e6e72af1a159.css?body=1" for 192.168.1.76 at 2015-12-11 10:55:10 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/signup-login.self-9a22339d67f17284997bc601bf39a6fa4758bc45cd004b3b46ced848efc803cd.css?body=1" for 192.168.1.76 at 2015-12-11 10:55:10 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 192.168.1.76 at 2015-12-11 10:55:10 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/client-new.self-0b7940e079c99b2cd5f5c42b6e1d61b81cf319138c8d59352ab8857c003c6b55.css?body=1" for 192.168.1.76 at 2015-12-11 10:55:10 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 192.168.1.76 at 2015-12-11 10:55:10 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/welcome-index.self-46498a2731122ee131308bf92f94f36070df1f7558a2ec75fff04365772b55b2.css?body=1" for 192.168.1.76 at 2015-12-11 10:55:10 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/coach-show.self-ba3d43d6062a7831134a0d4cea015a684f43263ed8bde4db93f1752aa499143a.css?body=1" for 192.168.1.76 at 2015-12-11 10:55:10 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for 192.168.1.76 at 2015-12-11 10:55:10 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/slideout.self-875e0eadc8828f0f28dd7ac4ae3c2eada99aace86b8804f768a7e00ff4900da2.css?body=1" for 192.168.1.76 at 2015-12-11 10:55:10 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 192.168.1.76 at 2015-12-11 10:55:10 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for 192.168.1.76 at 2015-12-11 10:55:10 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/clients/2" for 192.168.1.76 at 2015-12-11 10:55:11 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ClientsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mClient Load (0.4ms)[0m  SELECT  "clients".* FROM "clients" WHERE "clients"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mCoach Load (0.3ms)[0m  [1mSELECT  "coaches".* FROM "coaches" WHERE "coaches"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mGoal Load (0.3ms)[0m  SELECT "goals".* FROM "goals" WHERE "goals"."client_id" = $1  [["client_id", 2]]
+  Rendered clients/show.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 103ms (Views: 100.7ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/clients/2" for 192.168.1.76 at 2015-12-11 10:55:24 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ClientsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mClient Load (0.4ms)[0m  [1mSELECT  "clients".* FROM "clients" WHERE "clients"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mCoach Load (0.3ms)[0m  SELECT  "coaches".* FROM "coaches" WHERE "coaches"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mGoal Load (0.3ms)[0m  [1mSELECT "goals".* FROM "goals" WHERE "goals"."client_id" = $1[0m  [["client_id", 2]]
+  Rendered clients/show.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 122ms (Views: 119.6ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/client-show.self-b0708331ccbd9ef9592527afb4166f6f40b16452bbf171d61f70d3ba218422e8.css?body=1" for 192.168.1.76 at 2015-12-11 10:55:24 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/new-goal.self-744ccc501188b0ff332603a50519e145cc171ced0fcb21aaa617e6e72af1a159.css?body=1" for 192.168.1.76 at 2015-12-11 10:55:24 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/layout.self-d6b60e0257a9dd0d9cfd6a41b531a0a6b6118da2ea9da67dbb84d0854676b30e.css?body=1" for 192.168.1.76 at 2015-12-11 10:55:24 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/signup-login.self-9a22339d67f17284997bc601bf39a6fa4758bc45cd004b3b46ced848efc803cd.css?body=1" for 192.168.1.76 at 2015-12-11 10:55:24 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/welcome-index.self-46498a2731122ee131308bf92f94f36070df1f7558a2ec75fff04365772b55b2.css?body=1" for 192.168.1.76 at 2015-12-11 10:55:24 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/client-new.self-0b7940e079c99b2cd5f5c42b6e1d61b81cf319138c8d59352ab8857c003c6b55.css?body=1" for 192.168.1.76 at 2015-12-11 10:55:24 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 192.168.1.76 at 2015-12-11 10:55:24 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/coach-show.self-ba3d43d6062a7831134a0d4cea015a684f43263ed8bde4db93f1752aa499143a.css?body=1" for 192.168.1.76 at 2015-12-11 10:55:24 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/slideout.self-875e0eadc8828f0f28dd7ac4ae3c2eada99aace86b8804f768a7e00ff4900da2.css?body=1" for 192.168.1.76 at 2015-12-11 10:55:24 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for 192.168.1.76 at 2015-12-11 10:55:24 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 192.168.1.76 at 2015-12-11 10:55:25 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 192.168.1.76 at 2015-12-11 10:55:25 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for 192.168.1.76 at 2015-12-11 10:55:25 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/coaches/1" for 192.168.1.76 at 2015-12-11 10:55:36 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CoachesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mCoach Load (0.3ms)[0m  SELECT  "coaches".* FROM "coaches" WHERE "coaches"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mClient Load (0.2ms)[0m  [1mSELECT "clients".* FROM "clients" WHERE "clients"."coach_id" = $1[0m  [["coach_id", 1]]
+  Rendered coaches/show.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 115ms (Views: 113.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/coaches/1" for 192.168.1.76 at 2015-12-11 10:55:36 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CoachesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mCoach Load (0.2ms)[0m  SELECT  "coaches".* FROM "coaches" WHERE "coaches"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mClient Load (0.2ms)[0m  [1mSELECT "clients".* FROM "clients" WHERE "clients"."coach_id" = $1[0m  [["coach_id", 1]]
+  Rendered coaches/show.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 88ms (Views: 86.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/coach-show.self-cd02354d1fccad84be6406c98deab955eaa42726dc43d6866b1c940824f86243.css?body=1" for 192.168.1.76 at 2015-12-11 10:55:36 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/clients/1" for 192.168.1.76 at 2015-12-11 10:55:40 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ClientsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mClient Load (0.4ms)[0m  SELECT  "clients".* FROM "clients" WHERE "clients"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCoach Load (0.2ms)[0m  [1mSELECT  "coaches".* FROM "coaches" WHERE "coaches"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mGoal Load (0.3ms)[0m  SELECT "goals".* FROM "goals" WHERE "goals"."client_id" = $1  [["client_id", 1]]
+  Rendered clients/show.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 81ms (Views: 79.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/coaches/1" for 192.168.1.76 at 2015-12-11 10:55:45 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CoachesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCoach Load (0.3ms)[0m  [1mSELECT  "coaches".* FROM "coaches" WHERE "coaches"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mClient Load (0.2ms)[0m  SELECT "clients".* FROM "clients" WHERE "clients"."coach_id" = $1  [["coach_id", 1]]
+  Rendered coaches/show.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 71ms (Views: 69.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/clients/2" for 192.168.1.76 at 2015-12-11 10:55:50 -0500
+Cannot render console from 192.168.1.76! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ClientsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mClient Load (0.4ms)[0m  [1mSELECT  "clients".* FROM "clients" WHERE "clients"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mCoach Load (0.2ms)[0m  SELECT  "coaches".* FROM "coaches" WHERE "coaches"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mGoal Load (0.3ms)[0m  [1mSELECT "goals".* FROM "goals" WHERE "goals"."client_id" = $1[0m  [["client_id", 2]]
+  Rendered clients/show.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 82ms (Views: 79.1ms | ActiveRecord: 0.9ms)
